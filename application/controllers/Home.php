@@ -9,7 +9,18 @@ class Home extends CI_Controller{
 		$data['navigation'] = $this->load->view('include/navigation.php',NULL,TRUE);
 		$data['slider'] = $this->load->view('include/slider.php',NULL,TRUE);
 		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
-		$data['login_navbar'] = $this->load->view('include/login_navbar.php',NULL,TRUE);
+		$data['popularitem'] = $this->load->view('include/popularitem.php',NULL,TRUE);
+		$data['artikel'] = $this->load->view('include/artikel.php',NULL,TRUE);
 		$this->load->view('pages/home.php',$data);
+	}
+
+	public function login(){
+		$data['js'] = $this->load->view('include/js.php',NULL,TRUE);
+		$data['css'] = $this->load->view('include/css.php',NULL,TRUE);
+		$data['navigation_login'] = $this->load->view('include/navigation_login.php',NULL,TRUE);
+		$data['slider'] = $this->load->view('include/slider.php',NULL,TRUE);
+		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
+		$data['popularitem'] = $this->load->view('include/popularitem.php',NULL,TRUE);
+		$this->load->view('pages/home_login.php',$data);
 	}
 }

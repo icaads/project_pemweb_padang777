@@ -9,6 +9,8 @@
 	echo $js;
 	echo $navigation;
 	echo $slider;
+	echo $popularitem;
+	echo $artikel;
 	echo $footer;
 ?>
 </body>
