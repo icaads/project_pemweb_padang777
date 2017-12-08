@@ -44,7 +44,7 @@
 						<div class="modal-dialog">
 							<div class="modal-content">
 								<div class="modal-header">
-									
+				
 									<h4 class="modal-title">Data Tamu</h4>
 								</div>
                                 <?php echo form_open('Guest/cek'); ?>

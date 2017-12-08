@@ -4,7 +4,6 @@
 	<title></title>
 </head>
 <body>
-<?php $nama = $this->session->userdata('nama'); var_dump($nama);?>
 <?php
 	echo $css;
 	echo $js;
