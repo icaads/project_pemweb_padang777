@@ -3,15 +3,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Guest extends CI_Controller{
-    public function __construct(){
-        parent::__construct();
-        $this->load->model('menu');
-    }
-
 	public function index(){
         $this->load->library('form_validation');
         $this->form_validation->set_rules('nama', 'Nama', 'required');
-        $this->form_validation->set_rules('nohp', 'Nomor Telepon', 'required|int');
+        $this->form_validation->set_rules('nohp', 'Nomor Telepon', 'required');
         $this->form_validation->set_rules('alamat', 'Alamat', 'required');
         $nama = $this->input->post('nama');
         $nohp = $this->input->post('nohp');
@@ -21,8 +16,7 @@ class Guest extends CI_Controller{
 		$guest_session = array(
             'nama' => $nama,
             'nohp' => $nohp,
-            'alamat' => $alamat,
-            'status' => $guest
+            'alamat' => $alamat
         );
 
         //var_dump($data_session);
