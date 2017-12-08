@@ -16,7 +16,7 @@
         }
 
         public function show_cabang_case($lokasi){
-            $this->db->where('Kota',$lokasi);
+            $this->db->where('IDCabang',$lokasi);
             $query = $this->db->get('cabang');
             return $query->result_array();
         }
