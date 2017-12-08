@@ -5,6 +5,7 @@ class Contactform extends CI_Controller
     {
         parent::__construct();
         $this->load->library(array('email','form_validation'));
+        $this->load->model('cabang');
     }
 
     function alpha_space_only($str)
@@ -22,9 +23,13 @@ class Contactform extends CI_Controller
 
     function index()
     {
+        $cabang['data'] = $this->cabang->show_cabang();
         $data['js'] = $this->load->view('include/js.php',NULL,TRUE);
-		$data['css'] = $this->load->view('include/css.php',NULL,TRUE);
-		$data['navigation'] = $this->load->view('include/navigation.php',NULL,TRUE);
+        $data['css'] = $this->load->view('include/css.php',NULL,TRUE);
+        $data['alamat'] = $this->load->view('include/alamat.php',$cabang,TRUE);
+        $data['navigation'] = $this->load->view('include/navigation.php',NULL,TRUE);
+        $data['navigation_login'] = $this->load->view('include/navigation_login.php',NULL,TRUE);
+        $data['navbar_guest'] = $this->load->view('include/navbar_guest.php',NULL,TRUE);
 		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
 		//$this->load->view('pages/contactus.php',$data);
         $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_space_only');
@@ -76,6 +81,8 @@ class Contactform extends CI_Controller
                 redirect(base_url('contactus'));
             }
         }
+    
     }
+
 }
 ?>
