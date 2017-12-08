@@ -7,7 +7,15 @@
 <?php
 	echo $css;
 	echo $js;
-	echo $navigation;
+	if($this->session->userdata('status')=='member'){
+		echo $navigation_login;
+	}
+	else if($this->session->userdata('status')=='guest'){
+		echo $navigation_guest;
+	}
+	else{
+		echo $navigation;
+	}
 	echo $slider;
 	echo $popularitem;
 	echo $artikel;
