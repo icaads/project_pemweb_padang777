@@ -7,7 +7,6 @@
 	<br>
 	<br>
 	<div class="row">
-
 		<!--<div class="col-lg-3">-->
 		<br>
 		<br>
@@ -31,7 +30,7 @@
 			</a>
 			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
 				<li>
-					<a href="shop/menu_ayam" value="ayam">Ayam</a>
+					<a href="#">Ayam</a>
 				</li>
 				<li>
 					<a href="#">Ikan</a>
