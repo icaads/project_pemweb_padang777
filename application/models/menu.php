@@ -15,7 +15,10 @@
             return $query->result_array();
         }
 
-        
+        public function show_menu($values){
+            $query = $this->db->get_where('menu',$values, );
+            return $query->result_array();
+        }
     }
         
 ?>
