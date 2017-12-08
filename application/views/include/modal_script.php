@@ -13,7 +13,8 @@
 
 <script type="text/javascript">
     $(window).on('load',function(){
-        $('modal_guest').modal({backdrop: 'static', keyboard: false})
+        $('#modal_guest').modal({backdrop: 'static', keyboard: false})
+		
     });
 </script>
 

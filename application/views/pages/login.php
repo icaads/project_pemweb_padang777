@@ -47,7 +47,8 @@
 									
 									<h4 class="modal-title">Data Tamu</h4>
 								</div>
-                                <?php echo form_open('Guest'); ?>
+                                <?php echo form_open('Guest/cek'); ?>
+								<?php echo validation_errors(); ?>								
 								<div class="modal-body">
 									<div class="form-group">
 										<label for="name" class="col-sm-3 control-label">Nama</label>
@@ -92,7 +93,7 @@
 									<button type="submit" class="btn btn-primary btn-block">Lanjutkan</button>
 								</div>
 							</div>
-							</form>
+							<?php echo form_close(); ?>
 						</div>
 					</div>
 				</div>
