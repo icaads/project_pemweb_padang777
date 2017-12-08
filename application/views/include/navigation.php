@@ -62,7 +62,7 @@
             <a class="nav-link" href="<?php echo base_url()?>login/login_bar">Reservation</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url()?>contactform">Contact</a>
+            <a class="nav-link" href="<?php echo base_url()?>contactform/index">Contact</a>
           </li>
       </ul>
     </div>
