@@ -18,7 +18,8 @@ class Guest extends CI_Controller{
 		$guest_session = array(
             'nama' => $nama,
             'nohp' => $nohp,
-            'alamat' => $alamat
+            'alamat' => $alamat,
+            'status' => "guest"
         );
 
         //var_dump($data_session);
@@ -30,7 +31,7 @@ class Guest extends CI_Controller{
 		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
 		$data['popularitem'] = $this->load->view('include/popularitem.php',NULL,TRUE);
 		$data['artikel'] = $this->load->view('include/artikel.php',NULL,TRUE);
-		$this->load->view('pages/home_guest.php',$data);
+		$this->load->view('pages/home.php',$data);
     }
     
     public function shop(){

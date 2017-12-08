@@ -11,7 +11,7 @@
 		echo $navigation_login;
 	}
 	else if($this->session->userdata('status')=='guest'){
-		echo $navigation_guest;
+		echo $navbar_guest;
 	}
 	else{
 		echo $navigation;
