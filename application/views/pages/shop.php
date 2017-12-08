@@ -66,19 +66,34 @@
 					<a href="#" onClick="document.getElementById('pelengkapform').submit();">Pelengkap</a>
 				</li>
 				<li>
-					<a href="#">Sayuran</a>
+					<?php echo form_open('shop/menu_sayuran', array('id'=>'sayuranform')); ?>
+						<input type="hidden" name="sayuran" value="sayuran">
+					</form>
+					<a href="#" onClick="document.getElementById('sayuranform').submit();">Sayuran</a>
 				</li>
 				<li>
-					<a href="#">Minuman Dingin</a>
+					<?php echo form_open('shop/menu_dingin', array('id'=>'dinginform')); ?>
+						<input type="hidden" name="sayuran" value="sayuran">
+					</form>
+					<a href="#" onClick="document.getElementById('dinginform').submit();">Minuman Dingin</a>
 				</li>
 				<li>
-					<a href="#">Minuman Panas</a>
+					<?php echo form_open('shop/menu_panas', array('id'=>'panasform')); ?>
+						<input type="hidden" name="panas" value="panas">
+					</form>
+					<a href="#" onClick="document.getElementById('panasform').submit();">Minuman Panas</a>
 				</li>
 				<li>
-					<a href="#">Minuman Botol</a>
+					<?php echo form_open('shop/menu_botol', array('id'=>'botolform')); ?>
+						<input type="hidden" name="botol" value="botol">
+					</form>
+					<a href="#" onClick="document.getElementById('botolform').submit();">Minuman Botol</a>
 				</li>
 				<li>
-					<a href="#">Juice</a>
+					<?php echo form_open('shop/menu_juice', array('id'=>'juiceform')); ?>
+						<input type="hidden" name="juice" value="juice">
+					</form>
+					<a href="#" onClick="document.getElementById('juiceform').submit();">Juice</a>
 				</li>
 			</ul>
 		</div>
