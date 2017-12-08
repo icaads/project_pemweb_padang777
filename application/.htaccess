@@ -1,6 +1,8 @@
-<IfModule authz_core_module>
-    Require all denied
-</IfModule>
-<IfModule !authz_core_module>
-    Deny from all
-</IfModule>
+RewriteEngine On
+    RewriteBase /project_pemweb_padang777
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ /project_pemweb_padang777/index.php/$1 [L]
+
+
+    ErrorDocument 404 /project_pemweb_padang777/index.php
