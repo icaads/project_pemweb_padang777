@@ -15,8 +15,8 @@
             return $query->result_array();
         }
 
-        public function show_menu($values){
-            $query = $this->db->get_where('menu',$values, );
+        public function show($values){
+            $query = $this->db->get_where('menu', array('idkategorimenu' => $values));
             return $query->result_array();
         }
     }
