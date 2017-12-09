@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<?php
+    <?php
 echo $js; echo $css;
 ?>
 </head>
@@ -11,6 +11,7 @@ echo $js; echo $css;
         <?php echo $navigation;?>
         <br>
         <div class="row">
+            <?php foreach ($cart as $row) {	?>
             <div class="col-sm-12 col-md-10 col-md-offset-1">
                 <table class="table table-hover">
                     <thead>
@@ -24,75 +25,36 @@ echo $js; echo $css;
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="col-sm-8 col-md-6">
-                                <div class="media">
-                                    <a class="thumbnail pull-left" href="#">
-                                        <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png"
-                                            style="width: 72px; height: 72px;"> </a>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">
-                                            <a href="#">Product name</a>
-                                        </h4>
-                                        <h5 class="media-heading"> by
-                                            <a href="#">Brand name</a>
-                                        </h5>
-                                        <span>Status: </span>
-                                        <span class="text-success">
-                                            <strong>In Stock</strong>
-                                        </span>
+                            <div class="my-list">
+                                <td class="col-sm-8 col-md-6">
+                                    <div class="media">
+                                        <a class="thumbnail pull-left" href="#">
+                                            <img style="width:100px; height:100px;"  src="<?php echo base_url();?><?php echo $row['Gambar'];?>" alt="dsadas" /> </a>
+                                        <div class="media-body">
+                                            <h4 class="media-heading">
+                                                <br>
+                                                <?php echo $row['NamaMenu']; ?>
+                                            </h4>
+                                        </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td class="col-sm-1 col-md-1" style="text-align: center">
-                                <input type="email" class="form-control" id="exampleInputEmail1" value="3">
-                            </td>
-                            <td class="col-sm-1 col-md-1 text-center">
-                                <strong>$4.87</strong>
-                            </td>
-                            <td class="col-sm-1 col-md-1 text-center">
-                                <strong>$14.61</strong>
-                            </td>
-                            <td class="col-sm-1 col-md-1">
-                                <button type="button" class="btn btn-danger">
-                                    <span class="glyphicon glyphicon-remove"></span> Remove
-                                </button>
-                            </td>
+                                </td>
+                                <td class="col-sm-1 col-md-1" style="text-align: center">
+                                    <input type="email" class="form-control" id="exampleInputEmail1" value="3">
+                                </td>
+                                <td class="col-sm-1 col-md-1 text-center">
+                                    <?php $harga = sprintf('%0.3f',$row['Harga']/1000); ?>
+                                </td>
+                                <td class="col-sm-1 col-md-1 text-center">
+                                    <strong>$14.61</strong>
+                                </td>
+                                <td class="col-sm-1 col-md-1">
+                                    <button type="button" class="btn btn-danger">
+                                        <span class="fa fa-remove"></span> Remove
+                                    </button>
+                                </td>
+                            </div>
                         </tr>
-                        <tr>
-                            <td class="col-md-6">
-                                <div class="media">
-                                    <a class="thumbnail pull-left" href="#">
-                                        <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png"
-                                            style="width: 72px; height: 72px;"> </a>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">
-                                            <a href="#">Product name</a>
-                                        </h4>
-                                        <h5 class="media-heading"> by
-                                            <a href="#">Brand name</a>
-                                        </h5>
-                                        <span>Status: </span>
-                                        <span class="text-warning">
-                                            <strong>Leaves warehouse in 2 - 3 weeks</strong>
-                                        </span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="col-md-1" style="text-align: center">
-                                <input type="email" class="form-control" id="exampleInputEmail1" value="2">
-                            </td>
-                            <td class="col-md-1 text-center">
-                                <strong>$4.99</strong>
-                            </td>
-                            <td class="col-md-1 text-center">
-                                <strong>$9.98</strong>
-                            </td>
-                            <td class="col-md-1">
-                                <button type="button" class="btn btn-danger">
-                                    <span class="glyphicon glyphicon-remove"></span> Remove
-                                </button>
-                            </td>
-                        </tr>
+                        <?php } ?>
                         <tr>
                             <td>   </td>
                             <td>   </td>
@@ -124,12 +86,12 @@ echo $js; echo $css;
                             <td>   </td>
                             <td>   </td>
                             <td>
-                                <h3>Total</h3>
+                                <h4>Total</h4>
                             </td>
                             <td class="text-right">
-                                <h3>
+                                <h4>
                                     <strong>$31.53</strong>
-                                </h3>
+                                </h4>
                             </td>
                         </tr>
                         <tr>
@@ -155,4 +117,5 @@ echo $js; echo $css;
     </div>
     <?php echo $footer; ?>
 </body>
+
 </html>
