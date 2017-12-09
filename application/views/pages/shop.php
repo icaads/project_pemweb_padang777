@@ -42,36 +42,36 @@
 					</a>
 					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
 						<li>
-							<a href="<?php echo base_url("Shop")?>">Semua Kategori</a>
+							<a href="<?php echo base_url(" Shop ")?>">Semua Kategori</a>
 						</li>
 						<li>
-						<li>
-							<a href="<?php echo base_url("Shop/kategori_menu?id=KM001 ")?>">Ayam</a>
-						</li>
-						<li>
-							<a href="<?php echo base_url("Shop/kategori_menu?id=KM003 ")?>">Ikan</a>
-						</li>
-						<li>
-							<a href="<?php echo base_url("Shop/kategori_menu?id=KM002 ")?>">Sapi</a>
-						</li>
-						<li>
-							<a href="<?php echo base_url("Shop/kategori_menu?id=KM005 ")?>">Pelengkap</a>
-						</li>
-						<li>
-							<a href="<?php echo base_url("Shop/kategori_menu?id=KM004 ")?>">Sayuran</a>
-						</li>
-						<li>
-							<a href="<?php echo base_url("Shop/kategori_menu?id=KM007 ")?>">Minuman Dingin</a>
-						</li>
-						<li>
-							<a href="<?php echo base_url("Shop/kategori_menu?id=KM009 ")?>">Minuman Panas</a>
-						</li>
-						<li>
-							<a href="<?php echo base_url("Shop/kategori_menu?id=KM006 ")?>">Minuman Botol</a>
-						</li>
-						<li>
-							<a href="<?php echo base_url("Shop/kategori_menu?id=KM008 ")?>">Juice</a>
-						</li>
+							<li>
+								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM001 ")?>">Ayam</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM003 ")?>">Ikan</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM002 ")?>">Sapi</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM005 ")?>">Pelengkap</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM004 ")?>">Sayuran</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM007 ")?>">Minuman Dingin</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM009 ")?>">Minuman Panas</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM006 ")?>">Minuman Botol</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM008 ")?>">Juice</a>
+							</li>
 					</ul>
 				</div>
 			</div>
@@ -80,14 +80,8 @@
 				<br>
 				<br>
 				<br>
-				<!--<//?php 
-		//	$jumlah = $this->menu->semua_kategori();
-		//	for($i=0;$i<$jumlah/4;$i=$i+1){
-			?>-->
 				<div class="row">
-
 					<?php foreach ($menu as $row) {	
-				//echo ("sda");
 			?>
 					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 						<div class="my-list">
@@ -131,19 +125,6 @@
 													<div class="col-md-6 product_img">
 														<img src="<?php echo base_url();?><?php echo $row['Gambar'];?>" class="img-responsive">
 													</div>
-<<<<<<< HEAD
-												</div>
-												
-											</div>
-												<br>
-												<div class="space-ten"></div>
-												<div class="btn-ground">
-													<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#keranjang">
-														<span class="fa fa-shopping-cart"> Taruh Keranjang</span>
-													</button>
-												</div>
-												
-=======
 													<div class="col-md-6 product_content">
 														<h4>Kategori Id:
 															<span>
@@ -157,59 +138,44 @@
 															<?php echo 'Rp. '.$harga.',00';?>
 
 														</h3>
-														<div class="container">
-
-															<div class="row">
-																<div class="col-xs-3 col-xs-offset-3">
-																	<div class="input-group number-spinner">
-																		<span class="input-group-btn data-dwn">
-																			<button class="btn btn-default btn-info" data-dir="dwn">
-																				<span class="fa fa-minus"></span>
-																			</button>
-																		</span>
-																		<input type="text" class="form-control text-center" value="1" min="-10" max="40">
-																		<span class="input-group-btn data-up">
-																			<button class="btn btn-default btn-info" data-dir="up">
-																				<span class="fa fa-plus"></span>
-																			</button>
-																		</span>
-																	</div>
-																</div>
-															</div>
-
-														</div>
-														<br>
 														<div class="space-ten"></div>
-														<div class="btn-ground">
-															<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#keranjang">
-																<span class="fa fa-shopping-cart"> Taruh Keranjang</span>
-															</button>
-														</div>
-														<div id="keranjang" class="modal fade" role="dialog">
-															<div class="modal-dialog">
-																<div class="modal-content">
-																	<div class="modal-header">
-																		<button type="button" class="close" data-dismiss="modal">&times;</button>
-																		<h4 class="modal-title">Close</h4>
-																	</div>
-																	<div class="modal-body">
-																		<button type="button" class="btn btn-primary">
-																			<i class="fa fa-chevron-left"></i> Lanjutkan Belanja
+
+													<div class="container">
+
+														<div class="row">
+															<div class="col-xs-3 col-xs-offset-3">
+																<div class="input-group number-spinner">
+																	<span class="input-group-btn data-dwn">
+																		<button class="btn btn-default btn-info" data-dir="dwn">
+																			<span class="fa fa-minus"></span>
 																		</button>
-																		<button type="button" class="btn btn-primary">Pembayaran
-																			<i class="fa fa-chevron-right"> </i>
+																	</span>
+																	<input type="text" class="form-control text-center" value="1" min="-10" max="40">
+																	<span class="input-group-btn data-up">
+																		<button class="btn btn-default btn-info" data-dir="up">
+																			<span class="fa fa-plus"></span>
 																		</button>
-																	</div>
-																	<div class="modal-footer">
-																		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-																	</div>
+																	</span>
 																</div>
 															</div>
 														</div>
+
 													</div>
+													<br>
+													<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#keranjang">
+													<span class="fa fa-shopping-cart"> Taruh Keranjang</span>
+												</button>
+													</div>
+
+
+
+													
 												</div>
->>>>>>> 0376b9aac064f60982fb441f066b0001f58d7cb3
 											</div>
+											<div class="modal-footer">
+												<div class="space-ten"></div>
+											</div>
+											
 										</div>
 									</div>
 								</div>
