@@ -29,7 +29,7 @@ class Guest extends CI_Controller{
 		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
 		$data['popularitem'] = $this->load->view('include/popularitem.php',NULL,TRUE);
         $data['artikel'] = $this->load->view('include/artikel.php',NULL,TRUE);
-        echo "<br><br>";
+        //echo "<br><br>";
       //  var_dump($guest_session);
 		$this->load->view('pages/home.php',$data);
     }
