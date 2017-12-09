@@ -22,7 +22,7 @@
                           <div class="form-group">
                             <label class="sr-only" for="password">Password</label>
                             <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
-                            <br>
+                           
                               <div class="help-block text-left"><a href="">Forget the password ?</a></div>
                           </div>
                           <div class="form-group">
