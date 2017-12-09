@@ -4,24 +4,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Guest extends CI_Controller{
 	public function cek(){
-        $this->load->library('form_validation');
-        $this->form_validation->set_rules('nama', 'Nama', 'required');
-        $this->form_validation->set_rules('nohp', 'Nomor Telepon', 'required');
-        $this->form_validation->set_rules('alamat', 'Alamat', 'required');
         $nama = $this->input->post('nama');
         $nohp = $this->input->post('nohp');
         $alamat = $this->input->post('alamat');
-        if ($nama == NULL | $nohp = NULL || $alamat == NULL){
+       // echo "<br><br>";
+        
+        if ($nama == NULL | $nohp == NULL || $alamat == NULL){
             redirect(base_url('login/login_bar'));
         }
-
+        //var_dump($nohp);
 		$guest_session = array(
             'nama' => $nama,
-            'nohp' => $nohp,
+            'NoTlp' => $nohp,
             'alamat' => $alamat,
             'status' => "guest"
         );
-
+       // var_dump($guest_session['NoTlp']);
        
         $this->session->set_userdata($guest_session);
         $data['js'] = $this->load->view('include/js.php',NULL,TRUE);
@@ -30,7 +28,9 @@ class Guest extends CI_Controller{
 		$data['slider'] = $this->load->view('include/slider.php',NULL,TRUE);
 		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
 		$data['popularitem'] = $this->load->view('include/popularitem.php',NULL,TRUE);
-		$data['artikel'] = $this->load->view('include/artikel.php',NULL,TRUE);
+        $data['artikel'] = $this->load->view('include/artikel.php',NULL,TRUE);
+        echo "<br><br>";
+      //  var_dump($guest_session);
 		$this->load->view('pages/home.php',$data);
     }
     

@@ -46,6 +46,28 @@ class Reservasi extends CI_Controller{
 		$this->load->view('include/modal_konfirmasi.php',$data);
 	}
 
+	function konfirmasi_reservasi(){
+		$data['reservasi'] = $this->Reservasis->showdata($this->session->userdata('idtransreservasi'));
+		$data['js'] = $this->load->view('include/js.php',NULL,TRUE);
+		$data['css'] = $this->load->view('include/css.php',NULL,TRUE);
+		$data['navigation_login'] = $this->load->view('include/navigation_login.php',NULL,TRUE);
+		$data['navbar_guest'] = $this->load->view('include/navbar_guest.php',NULL,TRUE);
+		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
+		$this->load->view('pages/konfirmasireservasi.php',$data);
+	}
+
+	
+	function konfirmasi_akhir(){
+		$this->session->sess_destroy('idtransreservasi');
+        redirect(base_url());
+	}
+
+	function hapus_reservasi(){
+		$id = $this->input->get('id');
+		$this->Reservasis->delete($id);
+		redirect (base_url('reservasi/konfirmasi_reservasi'));
+	}
+
 	function pesan(){
 		
 		$tanggal = $this->input->post('waktu_datang');
@@ -56,37 +78,54 @@ class Reservasi extends CI_Controller{
 		if ($tanggal < date('Y-m-d')){
 			$status = 0;
 		}
-		if ($this->session->userdata('status')=='guest'){
+		if ($this->session->userdata('status')=='guest' & $statusreservasi= 1){
 			$username= $this->session->userdata('nama').'guest';
+			$statusreservasi = 0;
+			$dsa = $this->Reservasis->idtransaksireservasi();
+			//var_dump($dsa);
+
+			$idtransaksireservasi = $dsa[0]['IDTransactionReserv'] + 1;
+			$this->Reservasis->transaction();
+			//var_dump($idtransaksireservasi);
+			$this->session->set_userdata('idtransreservasi',$idtransaksireservasi);
 		}
-		else {
+		if ($this->session->userdata('status')=='member' & $statusreservasi= 1){
 			$username= $this->session->userdata('username');
+			$statusreservasi = 0;
+			$dsa = $this->Reservasis->idtransaksireservasi();
+			$idtransaksireservasi = $dsa[0]['IDTransactionReserv'] + 1;
+			$this->Reservasis->transaction();
+			$this->session->set_userdata('idtransreservasi',$idtransaksireservasi);
 		}
-		$idlokasi = $this->session->userdata('lokasi');
-		$data = array(
-			'username' => $username,
-			'jumlah_tamu' => $jumlah,
-			'tanggalreservasi' => $tanggal,
-			'IDMeja'=>$meja,
-			'IDCabang' => $idlokasi
-		);
+			$idlokasi = $this->session->userdata('lokasi');
+
+			$data = array(
+				'username' => $username,
+				'jumlah_tamu' => $jumlah,
+				'tanggalreservasi' => $tanggal,
+				'IDMeja'=>$meja,
+				'IDCabang' => $idlokasi,
+				'IDTransactionReserv' => $idtransaksireservasi,
+				'NoTlp' => $this->session->userdata('NoTlp')
+			);
 		if($status == 0){		
 			$this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Terjadi Kesalahan saat mengisi form!</div>');
-			redirect(base_url('reservasi/modal_konfirmasi'));
+			redirect(base_url('reservasi/modal'));
 		}
 		else {
 			$cek = $this->Reservasis->cek($data);
 			//var_dump($cek);
 			if($cek == 1){
 				$this->session->set_flashdata('msg','<div class="alert alert-warning text-center">Meja sudah dipesan pada tanggal yang anda pilih!</div>');
-				redirect(base_url('reservasi/modal_konfirmasi'));
+				redirect(base_url('reservasi/modal'));
 			}
 			else {
 				$this->Reservasis->insert($data);
+				redirect(base_url('reservasi/konfirmasi_reservasi'));
 			}
 			
 		}
 	}
-		
+
 
 }

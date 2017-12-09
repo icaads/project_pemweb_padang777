@@ -21,7 +21,8 @@ class Login extends CI_Controller{
             $data_session = array(
                 'username' => $username,
                 'namadepan' => $profile['NamaDepan'], 
-                'status' => "member"
+                'status' => "member",
+                'NoTlp' => $profile['NoTlp']
             );
 
             
