@@ -56,3 +56,4 @@ $route['about']= 'about';
 $route['shop']='shop';
 $route['contactform'] = 'contactfrom';
 $route['reservasi'] = 'reservasi';
+$route['cart']='cart';

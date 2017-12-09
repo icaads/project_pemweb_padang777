@@ -15,13 +15,15 @@
             return $query->result_array();
         }
 
-        public function kategori_menu(){
-            $kategori = $this->input->get('kategori',TRUE);
+        public function kategori_data($id){
             $this->db->trans_begin();
-            $query = $this->db->get('menu');
-            $query = $this->db->get_where('menu', array('IDKategoriMenu' => $kategori));
+                $this->db->select('*');
+                $this->db->from('menu');
+                //$query="select * from menu,kategorimenu where kategorimenu.IDKategoriMenu = menu.IDKategoriMenu"
+                $this->db->join('kategorimenu', 'kategorimenu.IDKategoriMenu = menu.IDKategoriMenu');
+                $this->db->where('kategorimenu.IDKategoriMenu',$id);
+                $query = $this->db->get();
             $this->db->trans_complete();
-
             if($this->db->trans_status()==FALSE){
                 $this->db->trans_rollback();
                 return FALSE;

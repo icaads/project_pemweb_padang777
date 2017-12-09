@@ -20,7 +20,7 @@
 				<a class="nav-link" href="<?php echo base_url()?>about">About</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="<?php echo base_url()?>guest/shop">Online Order</a>
+				<a class="nav-link" href="<?php echo base_url()?>shop">Online Order</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="<?php echo base_url('Reservasi/modal')?>">Reservation</a>

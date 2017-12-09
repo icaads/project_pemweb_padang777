@@ -1,8 +1,15 @@
+<html>
+
+<head>
 <?php
 echo $js; echo $css;
 ?>
+</head>
+
+<body>
     <div class="container">
         <?php echo $navigation;?>
+        <br>
         <div class="row">
             <div class="col-sm-12 col-md-10 col-md-offset-1">
                 <table class="table table-hover">
@@ -131,13 +138,13 @@ echo $js; echo $css;
                             <td>   </td>
                             <td>
                                 <button type="button" class="btn btn-default">
-                                    <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+                                    <span class="fa fa-shopping-cart"></span> Continue Shopping
                                 </button>
                             </td>
                             <td>
                                 <button type="button" class="btn btn-success">
                                     Checkout
-                                    <span class="glyphicon glyphicon-play"></span>
+                                    <span class="fa fa-play"></span>
                                 </button>
                             </td>
                         </tr>
@@ -146,5 +153,6 @@ echo $js; echo $css;
             </div>
         </div>
     </div>
-    <?php echo $footer;
-?>
+    <?php echo $footer; ?>
+</body>
+</html>
