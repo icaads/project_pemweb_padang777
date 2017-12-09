@@ -15,9 +15,20 @@
             return $query->result_array();
         }
 
-        public function show($values){
-            $query = $this->db->get_where('menu', array('idkategorimenu' => $values));
-            return $query->result_array();
+        public function kategori_menu(){
+            $kategori = $this->input->get('kategori',TRUE);
+            $this->db->trans_begin();
+            $query = $this->db->get('menu');
+            $query = $this->db->get_where('menu', array('IDKategoriMenu' => $kategori));
+            $this->db->trans_complete();
+
+            if($this->db->trans_status()==FALSE){
+                $this->db->trans_rollback();
+                return FALSE;
+            }
+            else{
+                return $query->result_array();
+            }
         }
     }
         

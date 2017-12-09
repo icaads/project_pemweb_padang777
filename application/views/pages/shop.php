@@ -42,67 +42,64 @@
 			</a>
 			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
 			<li>
-			<!-- <?php echo form_open('shop/menu_ayam'); ?>
-				<?php echo form_input(array('name'=>'ayam', 'value'=>'ayam')); ?>
-			<?php echo form_close(); ?> -->
+		
 			</li>
 				<li>
-					<?php echo form_open('shop/menu_ayam', array('id'=>'ayamform')); ?>
+					<?php echo form_open('shop/kategori_menu', array('id'=>'ayamform')); ?>
 						<input type="hidden" name="ayam" value="ayam">
-					</form>
+					<?php echo form_close(); ?>
 					<a href="#" onClick="document.getElementById('ayamform').submit();">Ayam</a>
 				</li>
 				<li>
-					<?php echo form_open('shop/menu_ikan', array('id'=>'ikanform')); ?>
+					<?php echo form_open('shop/kategori_menu', array('id'=>'ikanform')); ?>
 							<input type="hidden" name="ikan" value="ikan">
-					</form>
+					<?php echo form_close(); ?>
 					<a href="#" onClick="document.getElementById('ikanform').submit();">Ikan</a>
 				</li>
 				<li>
 					<?php echo form_open('shop/menu_sapi', array('id'=>'sapiform')); ?>
 							<input type="hidden" name="sapi" value="sapi">
-					</form>
+					<?php echo form_close(); ?>
 					<a href="#" onClick="document.getElementById('sapiform').submit();">Sapi</a>
 				</li>
 				<li>
 					<?php echo form_open('shop/menu_pelengkap', array('id'=>'pelengkapform')); ?>
 						<input type="hidden" name="pelengkap" value="pelengkap">
-					</form>
+					<?php echo form_close(); ?>
 					<a href="#" onClick="document.getElementById('pelengkapform').submit();">Pelengkap</a>
 				</li>
 				<li>
 					<?php echo form_open('shop/menu_sayuran', array('id'=>'sayuranform')); ?>
 						<input type="hidden" name="sayuran" value="sayuran">
-					</form>
+					<?php echo form_close(); ?>
 					<a href="#" onClick="document.getElementById('sayuranform').submit();">Sayuran</a>
 				</li>
 				<li>
 					<?php echo form_open('shop/menu_dingin', array('id'=>'dinginform')); ?>
 						<input type="hidden" name="sayuran" value="sayuran">
-					</form>
+					<?php echo form_close(); ?>
 					<a href="#" onClick="document.getElementById('dinginform').submit();">Minuman Dingin</a>
 				</li>
 				<li>
 					<?php echo form_open('shop/menu_panas', array('id'=>'panasform')); ?>
 						<input type="hidden" name="panas" value="panas">
-					</form>
+					<?php echo form_close(); ?>
 					<a href="#" onClick="document.getElementById('panasform').submit();">Minuman Panas</a>
 				</li>
 				<li>
 					<?php echo form_open('shop/menu_botol', array('id'=>'botolform')); ?>
 						<input type="hidden" name="botol" value="botol">
-					</form>
+					<?php echo form_close(); ?>
 					<a href="#" onClick="document.getElementById('botolform').submit();">Minuman Botol</a>
 				</li>
 				<li>
 					<?php echo form_open('shop/menu_juice', array('id'=>'juiceform')); ?>
 						<input type="hidden" name="juice" value="juice">
-					</form>
+					<?php echo form_close(); ?>
 					<a href="#" onClick="document.getElementById('juiceform').submit();">Juice</a>
 				</li>
 			</ul>
-		</div>
-		
+		</div>	
 	</div>
 	<div class="col-lg-12">
 		<br>
@@ -115,7 +112,9 @@
 			?>-->
 		<div class="row">
 
-			<?php foreach ($menu as $row) {	?>
+			<?php foreach ($menu as $row) {	
+				$kategori = $row['IDKategoriMenu'];
+			?>
 			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 				<div class="my-list">
 					<img src="<?php echo $row['Gambar'];?>" alt="dsadas" />
@@ -214,7 +213,6 @@
 																<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 															</div>
 														</div>
-
 													</div>
 												</div>
 											</div>
@@ -224,16 +222,13 @@
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
 			<?php }?>
-			
 		</div>
 	</div>
 </div>
 <br>
-
 <?php
 	echo $footer;
 ?>

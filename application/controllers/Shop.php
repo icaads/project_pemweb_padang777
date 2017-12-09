@@ -14,20 +14,21 @@ class Shop extends CI_Controller{
 		$this->load->view('pages/shop.php',$data);
 	}
 
-	public function menu_ayam(){
+	public function kategori_menu(){
 		$this->load->model('menu');
+		$menu['data'] = $this->menu->kategori_menu();
 		$data['js'] = $this->load->view('include/js.php',NULL,TRUE);
 		$data['css'] = $this->load->view('include/css.php',NULL,TRUE);
-		$data['navigation_login'] = $this->load->view('include/navigation_login.php',NULL,TRUE);
+		$data['navbar_guest'] = $this->load->view('include/navbar_guest.php',NULL,TRUE);
 		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
 		$data['modal_script'] = $this->load->view('include/modal_script.php',NULL,TRUE);
 		//var_dump($data);
 		//die();
-		$isi= $this->input->post('kategori');
-		$this->menu->show($isi);
+		//$isi= $this->input->post('kategori');
+		//$this->menu->show($isi);
 		
 
-		$this->load->view('pages/menu_ayam.php',$data);
+		$this->load->view('pages/shop_guest.php',$data);
 	}
 }
 ?>
