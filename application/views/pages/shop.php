@@ -95,8 +95,9 @@
 								<a href=<?php echo base_url("Shop/belanja?id=$id")?>>
 								<button class="btn btn-info">Pesan</button>	
 								</a>
-									
-								<button type="button" class="btn btn-info" href="#">Detail</button>
+								<a href=<?php echo base_url("Shop/detail?id=$id")?>	>
+								<button class="btn btn-info">Detail</button>
+								</a>
 							</div>
 						</div>
 					</div>

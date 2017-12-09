@@ -21,8 +21,22 @@
             $query = $this->db->get('menu');
            // var_dump($query->result_array());
             return $query->row_array();
+        }
 
-            
+        public function details($id){
+            $this->db->trans_begin ();
+                $this->db->select('*');
+                $this->db->from('menu');
+                $this->db->where('IDMenu',$id);
+                $query = $this->db->get('');
+            $this->db->trans_complete();
+            if($this->db->trans_status()==FALSE){
+                $this->db->trans_rollback();
+                return FALSE;
+            }
+            else{
+                return $query->result_array();
+            }            
         }
 
         public function kategori_data($id){
