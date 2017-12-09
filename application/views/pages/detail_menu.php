@@ -58,14 +58,18 @@
 
                         <hr>
                         <div class="btn-group cart">
+                        <a href=<?php echo base_url("Shop/belanja?id=$id")?>>
                             <button type="button" class="btn btn-success">
                             <span class="fa fa-shopping-cart"></span> Pesan
                             </button>
+                            </a>
                         </div>
                         <div class="btn-group wishlist">
+                        <a href=<?php echo base_url("Shop")?>>
                             <button type="button" class="btn btn-danger">
                                 <span class="fa fa-arrow-left"></span> Kembali
                             </button>
+                            </a>
                         </div>
                     </div>
                 </div>
