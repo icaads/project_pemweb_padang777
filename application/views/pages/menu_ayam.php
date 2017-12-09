@@ -1,7 +1,11 @@
+<html>
+<head>
 <?php 
 	echo $css;
 	echo $js;
 ?>
+</head>
+<body>
 <div class="container">
 	<?php echo $navigation_login; ?>
 	<br>
@@ -190,3 +194,5 @@
 <?php
 	echo $footer;
 ?>
+</body>
+</html>
