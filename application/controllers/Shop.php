@@ -62,5 +62,19 @@ class Shop extends CI_Controller{
 		$this->cart->destroy();
 		redirect(base_url('home'));
 	}
+	
+	public function detail(){
+		$this->load->model('menu');
+		$asd = $this->input->get('id');
+		$data['menu']=$this->menu->details($asd);
+		$data['js'] = $this->load->view('include/js.php',NULL,TRUE);
+		$data['css'] = $this->load->view('include/css.php',NULL,TRUE);
+		$data['navbar_guest'] = $this->load->view('include/navbar_guest.php',NULL,TRUE);
+		$data['navigation_login'] = $this->load->view('include/navigation_login.php',NULL,TRUE);
+		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
+		$data['modal_script'] = $this->load->view('include/modal_script.php',NULL,TRUE);
+		$this->load->view('pages/detail_menu.php',$data);
+
+	}
 }
 ?>
