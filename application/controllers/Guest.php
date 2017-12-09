@@ -22,7 +22,7 @@ class Guest extends CI_Controller{
             'status' => "guest"
         );
 
-        //var_dump($data_session);
+       
         $this->session->set_userdata($guest_session);
         $data['js'] = $this->load->view('include/js.php',NULL,TRUE);
 		$data['css'] = $this->load->view('include/css.php',NULL,TRUE);
@@ -54,3 +54,5 @@ class Guest extends CI_Controller{
 		$this->load->view('pages/reservation_guest.php',$data);
     }
 }
+
+?>
