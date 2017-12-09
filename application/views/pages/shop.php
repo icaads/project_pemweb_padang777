@@ -109,6 +109,9 @@
 								<br>
 								<button href="#" class="btn btn-info">Pesan</button>
 								<button type="button" class="btn btn-info">Detail</button>
+
+								<button type="button" class="btn btn-info" data-toggle="modal" data-target="#produkdetail">Detail</button>
+								
 							</div>
 						</div>
 					</div>
