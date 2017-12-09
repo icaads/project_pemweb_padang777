@@ -11,7 +11,7 @@
         }
 
         public function insert($data){
-            $this->db->insert('Reservasi',$data);
+            $this->db->insert('reservasi',$data);
         }
 
 

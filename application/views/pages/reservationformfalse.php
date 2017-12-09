@@ -119,10 +119,17 @@
   <div id="caption">apa</div>
 </div>
 				</div>
+               
+                </div>
+                
 
 			</div>
-
-
+            <div class="container"><div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>Terjadi Kesalahan!</strong> Silahkan isi form ulang.
+              </div>
+</div>
+            
 	</div>
 	<br>
 	<br>
