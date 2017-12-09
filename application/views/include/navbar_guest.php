@@ -39,7 +39,7 @@
 				</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link">
+				<a class="nav-link" href="cart/shopping_cart">
 					<span class="fa fa-shopping-cart"></span> 0
 			</li>
 			</a>
