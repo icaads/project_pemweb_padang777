@@ -57,5 +57,10 @@ class Shop extends CI_Controller{
 	   ));
 	   redirect(base_url('cart/shopping_cart'));
 	}
+
+	function destroy_cart(){
+		$this->cart->destroy();
+		redirect(base_url('home'));
+	}
 }
 ?>

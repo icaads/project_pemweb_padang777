@@ -85,7 +85,7 @@ echo $js; echo $css;
                             </td>
                             <td class="text-right">
                                 <h5>
-                                    <strong>Rp 15.000,00</strong>
+                                    <strong>RpS15.000,00</strong>
                                 </h5>
                             </td>
                         </tr>
@@ -109,15 +109,19 @@ echo $js; echo $css;
                             <td>   </td>
                             <td>   </td>
                             <td>
+                            <a href=<?php echo base_url("Shop")?>>
                                 <button type="button" class="btn btn-default">
                                     <span class="fa fa-shopping-cart"></span> Continue Shopping
                                 </button>
                             </td>
+                            </a>
                             <td>
+                            <a href=<?php echo base_url("Shop/destroy_cart")?>>
                                 <button type="button" class="btn btn-success">
                                     Checkout
                                     <span class="fa fa-play"></span>
                                 </button>
+                            </a>
                             </td>
                         </tr>
                     </tbody>
