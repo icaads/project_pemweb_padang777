@@ -18,7 +18,7 @@ class Shop extends CI_Controller{
 	public function kategori_menu(){
 		$this->load->model('menu');
 		$asd = $this->input->get('id');
-		var_dump("$asd");
+		//var_dump("$asd");
 		$data['menu'] = $this->menu->kategori_data($asd);
 		$data['js'] = $this->load->view('include/js.php',NULL,TRUE);
 		$data['css'] = $this->load->view('include/css.php',NULL,TRUE);

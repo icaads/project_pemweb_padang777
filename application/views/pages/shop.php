@@ -131,7 +131,6 @@
 													<div class="col-md-6 product_img">
 														<img src="<?php echo base_url();?><?php echo $row['Gambar'];?>" class="img-responsive">
 													</div>
-<<<<<<< HEAD
 												</div>
 												
 											</div>
@@ -143,7 +142,6 @@
 													</button>
 												</div>
 												
-=======
 													<div class="col-md-6 product_content">
 														<h4>Kategori Id:
 															<span>
@@ -208,7 +206,6 @@
 														</div>
 													</div>
 												</div>
->>>>>>> 0376b9aac064f60982fb441f066b0001f58d7cb3
 											</div>
 										</div>
 									</div>
