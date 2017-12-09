@@ -55,7 +55,26 @@
                             <?php $harga = sprintf('%0.3f',$row['Harga']/1000); ?>
                             <?php echo 'Rp. '.$harga.',00';?>
                         </h4>
-
+                        <?php echo form_open(); ?>
+                        <div class="form-group">
+							<label for="jumlah_tamu" class="col-md-7 control-label"><h4>Jumlah Tamu</h4></label>
+							<div class="col-md-4">
+								<div class="input-group">
+									<span class="input-group-btn">
+										<button type="button" class="quantity-left-minus btn btn-primary btn-number" data-type="minus" data-field="">
+											<span class="fa fa-minus"></span>
+										</button>
+									</span>
+									<input type="text" id="quantity" name="quantity" class="form-control input-number text-center" value="1" min="1" max="100">
+									<span class="input-group-btn">
+										<button type="button" class="quantity-right-plus btn btn-primary btn-number" data-type="plus" data-field="">
+											<span class="fa fa-plus"></span>
+										</button>
+									</span>
+								</div>
+							</div>
+						</div> 
+                        <?php echo form_close();?>         
                         <hr>
                         <div class="btn-group cart">
                         <a href=<?php echo base_url("Shop/belanja?id=$id")?>>
@@ -77,7 +96,7 @@
             <?php } ?>
     </div>
 <br>
-    <?php echo $footer; ?>
+    <?php echo $footer; echo $button_script; ?>
 </body>
 
 </html>

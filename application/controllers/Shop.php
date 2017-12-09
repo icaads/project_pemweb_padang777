@@ -72,6 +72,7 @@ class Shop extends CI_Controller{
 		$data['navbar_guest'] = $this->load->view('include/navbar_guest.php',NULL,TRUE);
 		$data['navigation_login'] = $this->load->view('include/navigation_login.php',NULL,TRUE);
 		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
+		$data['button_script'] = $this->load->view('include/button_script.php',NULL,TRUE);
 		$data['modal_script'] = $this->load->view('include/modal_script.php',NULL,TRUE);
 		$this->load->view('pages/detail_menu.php',$data);
 
