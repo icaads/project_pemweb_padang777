@@ -18,7 +18,7 @@
 			}
 			
 		?>
-		
+
 			<?php echo form_open('reservasi/pesan'); ?>
 			<br>
 			<br>
@@ -77,7 +77,9 @@
 										<i class="fa fa-spoon text-info"></i>
 									</div>
 									<select multiple class="form-control" name="Meja">
-										<?php foreach($meja as $row){ ?>
+									
+										<?php foreach($meja as $row){  
+											?>
 										<option values="<?php echo $row['IDMeja'];?>">
 											<?php echo $row['LokasiMeja'];?>
 										</option>
@@ -88,9 +90,9 @@
 							<label for="pilih_meja" class="col-sm-12 control-label">Silahkan isi form kembali untuk memilih lebih dari 1 meja</label>
 						</div>
 						<div class="form-group">
-						<div class="text-center">
-							<button type="submit" class="btn btn-primary btn-xs" style="width:40%">Submit</button>
-						</div>
+							<div class="text-center">
+								<button type="submit" class="btn btn-primary btn-xs" style="width:40%">Submit</button>
+							</div>
 						</div>
 						<br>
 					</div>
@@ -106,23 +108,22 @@
 						<img id="gambar" src=" <?php echo base_url('');?><?php echo $Cabang[0]['LinkDenah']?>" style="width:500px;height:400px;">
 						<?php }
 						?>
-						
+
 						<div id="myModal" class="modal">
 
-  <!-- The Close Button -->
-  <span class="close">&times;</span>
+							<!-- The Close Button -->
+							<span class="close">&times;</span>
 
-  <!-- Modal Content (The Image) -->
-  <img class="modal-content" id="denah">
+							<!-- Modal Content (The Image) -->
+							<img class="modal-content" id="denah">
 
-  <!-- Modal Caption (Image Text) -->
-  <div id="caption">apa</div>
-</div>
+							<!-- Modal Caption (Image Text) -->
+							<div id="caption">apa</div>
+						</div>
 				</div>
 
 			</div>
-
-
+			
 	</div>
 	<br>
 	<br>

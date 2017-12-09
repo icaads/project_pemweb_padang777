@@ -11,14 +11,16 @@
     <div  class="modal-dialog" role="document">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title">Pilih Cabang Pengiriman</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
+            <h5 class="modal-title">Pilih Cabang Restaurant</h5>
+            <hr>
+           
+           
+           
         </div>
         <div class="modal-body">
         <div class="form-group">
-			<label for="pilih_cabang" class="col-sm-12 control-label">Pilih Cabang Pengiriman</label>
+        <?php  echo $this->session->flashdata('msg'); ?>
+			<label for="pilih_cabang" class="col-sm-12 control-label">Kota Cabang</label>
 			<div class="col-sm-12">
 				<div class="input-group">
 					<div class="input-group-addon bg-light">
