@@ -8,13 +8,13 @@ echo $js; echo $css;
 
 <body>
     <div class="container">
-        <?php echo $navigation; 
-        $subtotal = 0;?>
+        <?php echo $navigation; ?>
+        
         <br>
         <div class="row">
        <?php if ($cart = $this->cart->contents()){  ?>
             <?php foreach ($cart as $row) {	
-                $subtotal = $row['price']+$subtotal;?>
+                ?>
             <div class="col-sm-12 col-md-10 col-md-offset-1">
                 <table class="table table-hover">
                     <thead>
@@ -54,9 +54,10 @@ echo $js; echo $css;
                                     echo 'Rp'.$total.',00';?></strong>
                                 </td>
                                 <td class="col-sm-1 col-md-1">
-                                    <button type="button" class="btn btn-danger">
-                                        <span class="fa fa-remove"></span> Remove
-                                    </button>
+                                <?php $row_id = $row['rowid']; ?>
+                                <a href=<?php echo base_url("Shop/remove?id=$row_id")?>>
+								<button class="btn btn-danger">Remove</button>	
+								</a>
                                 </td>
                             </div>
                         </tr>
@@ -71,7 +72,7 @@ echo $js; echo $css;
                             </td>
                             <td class="text-right">
                                 <h5>
-                                    <strong><?php echo $subtotal; ?></strong>
+                                    <strong><?php echo 'Rp'.$this->cart->total().',00'; ?></strong>
                                 </h5>
                             </td>
                         </tr>
@@ -80,11 +81,11 @@ echo $js; echo $css;
                             <td>   </td>
                             <td>   </td>
                             <td>
-                                <h5>Estimated shipping</h5>
+                                <h5>Ongkos Kirim</h5>
                             </td>
                             <td class="text-right">
                                 <h5>
-                                    <strong>$6.94</strong>
+                                    <strong>Rp 15.000,00</strong>
                                 </h5>
                             </td>
                         </tr>
@@ -97,7 +98,9 @@ echo $js; echo $css;
                             </td>
                             <td class="text-right">
                                 <h4>
-                                    <strong>$31.53</strong>
+                                    <strong><?php 
+                                    $total = $this->cart->total() + 15000;
+                                    echo   'Rp'.$total,',00';?></strong>
                                 </h4>
                             </td>
                         </tr>

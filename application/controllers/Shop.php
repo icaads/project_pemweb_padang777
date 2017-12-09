@@ -42,11 +42,20 @@ class Shop extends CI_Controller{
 		'name' => $product['NamaMenu'],
 		'options' => $product['Gambar']
 	   );	
-	   var_dump($insert);
-	   $lala =  $this->cart->insert($insert);	
-	   var_dump($lala);
-	   var_dump($this->cart->contents()); 
-	   //redirect(base_url('shop'));
+	   //var_dump($insert);
+	   $this->cart->insert($insert);	
+	  // var_dump($lala);
+	   //var_dump($this->cart->contents()); 
+	   redirect(base_url('shop'));
+	}
+
+	function remove() {
+		$rowid = $this->input->get('id');
+	   $this->cart->update(array(
+		'rowid' => $rowid,
+		'qty' => 0
+	   ));
+	   redirect(base_url('cart/shopping_cart'));
 	}
 }
 ?>
