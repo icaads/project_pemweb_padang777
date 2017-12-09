@@ -18,7 +18,6 @@ class Shop extends CI_Controller{
 	public function kategori_menu(){
 		$this->load->model('menu');
 		$asd = $this->input->get('id');
-		//var_dump("$asd");
 		$data['menu'] = $this->menu->kategori_data($asd);
 		$data['js'] = $this->load->view('include/js.php',NULL,TRUE);
 		$data['css'] = $this->load->view('include/css.php',NULL,TRUE);
@@ -26,13 +25,28 @@ class Shop extends CI_Controller{
 		$data['navigation_login'] = $this->load->view('include/navigation_login.php',NULL,TRUE);
 		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
 		$data['modal_script'] = $this->load->view('include/modal_script.php',NULL,TRUE);
-		//var_dump($data);
-		//die();
-		//$isi= $this->input->post('kategori');
-		//$this->menu->show($isi);
-		
-
 		$this->load->view('pages/shop.php',$data);
+	}
+
+	function Belanja(){
+		$this->load->model('menu');
+		$this->load->library('cart');
+		$asd = $this->input->get('id');
+		
+		$product = $this->menu->cari($asd);
+		//var_dump($product);
+	    $insert = array(
+		'id' => $asd,
+		'qty' => 1,
+		'price' => $product['Harga'],
+		'name' => $product['NamaMenu'],
+		'options' => $product['Gambar']
+	   );	
+	   var_dump($insert);
+	   $lala =  $this->cart->insert($insert);	
+	   var_dump($lala);
+	   var_dump($this->cart->contents()); 
+	   //redirect(base_url('shop'));
 	}
 }
 ?>

@@ -2,16 +2,19 @@
 
 <head>
     <?php
-echo $js; echo $css;
+echo $js; echo $css; 
 ?>
 </head>
 
 <body>
     <div class="container">
-        <?php echo $navigation;?>
+        <?php echo $navigation; 
+        $subtotal = 0;?>
         <br>
         <div class="row">
-            <?php foreach ($cart as $row) {	?>
+       <?php if ($cart = $this->cart->contents()){  ?>
+            <?php foreach ($cart as $row) {	
+                $subtotal = $row['price']+$subtotal;?>
             <div class="col-sm-12 col-md-10 col-md-offset-1">
                 <table class="table table-hover">
                     <thead>
@@ -29,23 +32,26 @@ echo $js; echo $css;
                                 <td class="col-sm-8 col-md-6">
                                     <div class="media">
                                         <a class="thumbnail pull-left" href="#">
-                                            <img style="width:100px; height:100px;"  src="<?php echo base_url();?><?php echo $row['Gambar'];?>" alt="dsadas" /> </a>
+                                            <img style="width:100px; height:100px;"  src="<?php echo base_url();?><?php echo $row['options'];?>" alt="dsadas" /> </a>
                                         <div class="media-body">
                                             <h4 class="media-heading">
                                                 <br>
-                                                <?php echo $row['NamaMenu']; ?>
+                                                <?php echo $row['name']; ?>
                                             </h4>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="col-sm-1 col-md-1" style="text-align: center">
-                                    <input type="email" class="form-control" id="exampleInputEmail1" value="3">
+                                    <p><?php echo $row['qty']; ?></p>
                                 </td>
                                 <td class="col-sm-1 col-md-1 text-center">
-                                    <?php $harga = sprintf('%0.3f',$row['Harga']/1000); ?>
+                                    <p><?php $harga = sprintf('%0.3f',$row['price']/1000); 
+                                        echo 'Rp'.$harga.',00';
+                                    ?></p>
                                 </td>
                                 <td class="col-sm-1 col-md-1 text-center">
-                                    <strong>$14.61</strong>
+                                    <strong><?php $total = sprintf('%0.3f',$row['qty']*$row['price']/1000) ;
+                                    echo 'Rp'.$total.',00';?></strong>
                                 </td>
                                 <td class="col-sm-1 col-md-1">
                                     <button type="button" class="btn btn-danger">
@@ -54,17 +60,18 @@ echo $js; echo $css;
                                 </td>
                             </div>
                         </tr>
-                        <?php } ?>
+                        <?php } }?>
                         <tr>
                             <td>   </td>
                             <td>   </td>
                             <td>   </td>
                             <td>
                                 <h5>Subtotal</h5>
+                               
                             </td>
                             <td class="text-right">
                                 <h5>
-                                    <strong>$24.59</strong>
+                                    <strong><?php echo $subtotal; ?></strong>
                                 </h5>
                             </td>
                         </tr>

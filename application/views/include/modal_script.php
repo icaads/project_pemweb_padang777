@@ -12,7 +12,18 @@
 <script type="text/javascript">
 			
 			$(document).ready(function(){
-				$('#konfirmasit').modal({
+				$('#konfirmasi').modal({
+					keyboard: false,
+					show: 'fade',
+					backdrop: 'static',
+				});
+			});
+		</script>
+
+<script type="text/javascript">
+			
+			$(document).ready(function(){
+				$('#pesan').modal({
 					keyboard: false,
 					show: 'fade',
 					backdrop: 'static',

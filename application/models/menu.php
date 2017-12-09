@@ -15,6 +15,16 @@
             return $query->result_array();
         }
 
+        public function cari($id){
+           // var_dump($id);
+            $this->db->where('IDMenu',$id);
+            $query = $this->db->get('menu');
+           // var_dump($query->result_array());
+            return $query->row_array();
+
+            
+        }
+
         public function kategori_data($id){
             $this->db->trans_begin();
                 $this->db->select('*');
