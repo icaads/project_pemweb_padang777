@@ -68,7 +68,7 @@
                     </div>
 
                     <div class="text-center">
-                        <button class="btn btn-info btn-block rounded-0 py-2">Submit</button>
+                        <button class="btn btn-dark btn-block rounded-0 py-2">Submit</button>
                     </div>
 
                 </div>

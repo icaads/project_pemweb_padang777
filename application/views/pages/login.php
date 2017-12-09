@@ -1,11 +1,10 @@
+<div class="bg-normal" style="color:#EC87C0">
 <?php echo $navigation; echo $js; echo $css;?>
 <br>
 <br>
+<div class="bg-normal">
 <div class="container">
-	<p class="pb-4" style="text-align:center">Silahkan masukan username dan password untuk melakukan transaksi atau lakukan login sebagai tamu</p>
-</div>
-
-<div class="container">
+<p class="pb-4" style="text-align:center">Silahkan masukan username dan password untuk melakukan transaksi atau lakukan login sebagai tamu</p>
 	<div class="card border-dark rounded-0">
 
 		<div class="card-header p-0">
@@ -109,3 +108,13 @@
 <br>
 <?php echo $footer ;
 echo $modal_script;?>
+</div>
+
+	
+
+
+
+
+</div>
+
+

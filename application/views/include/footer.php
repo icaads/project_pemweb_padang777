@@ -1,4 +1,4 @@
-<footer class="py-2 bg-dark">
+<footer class="py-2 bg-danger">
 <div class="container">
 <div class="text-center center-block">
     <br>

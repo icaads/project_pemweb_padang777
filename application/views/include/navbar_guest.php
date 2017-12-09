@@ -1,5 +1,5 @@
 <?php $nama = $this->session->userdata('nama'); ?>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
 
 	<a class="navbar-brand" href="<?=base_url('')?>">
 		<img src="<?=base_url();?>/assets/picture/logo.png">
@@ -12,7 +12,7 @@
 	<div class="collapse navbar-collapse" id="navbarResponsive">
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item active">
-				<a class="nav-link" href="#">Home
+				<a class="nav-link" href="<?php base_url('home');?>">Home
 					<span class="sr-only">(current)</span>
 				</a>
 			</li>
