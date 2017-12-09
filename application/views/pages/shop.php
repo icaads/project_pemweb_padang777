@@ -15,30 +15,13 @@
 	else {
 		echo $navigation_login;
 	} ?>
-			<br>
-			<br>
+			<br><br>
+			<div class="container">
 			<div class="row">
-
-				<!--<div class="col-lg-3">-->
-				<br>
-				<br>
-				<!--h1 class="my-4">Padang 777</h1>
-			<div class="list-group">
-				<a href="#" class="list-group-item">Semua Kategori</a>
-				<a href="#" class="list-group-item">Ayam</a>
-				<a href="#" class="list-group-item">Ikan</a>
-				<a href="#" class="list-group-item">Sapi</a>
-				<a href="#" class="list-group-item">Pelengkap</a>
-				<a href="#" class="list-group-item">Sayuran</a>
-				<a href="#" class="list-group-item">Minuman Dingin</a>
-				<a href="#" class="list-group-item">Minuman Panas</a>
-				<a href="#" class="list-group-item">Minuman Botol</a>
-				<a href="#" class="list-group-item">Minuman Jus</a>
-			</div>-->
 				<div class="dropdown">
-					<a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-info" data-target="#" href="/page.html">
+					<a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="/page.html">
+						<span class="fa fa-navicon"> </span>
 						Kategori Menu
-						<span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
 						<li>
@@ -46,40 +29,41 @@
 						</li>
 						<li>
 							<li>
-								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM001 ")?>">Ayam</a>
+								<a href="<?php echo base_url("Shop/kategori_menu?id=KM001 ")?>">Ayam</a>
 							</li>
 							<li>
-								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM003 ")?>">Ikan</a>
+								<a href="<?php echo base_url("Shop/kategori_menu?id=KM003 ")?>">Ikan</a>
 							</li>
 							<li>
-								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM002 ")?>">Sapi</a>
+								<a href="<?php echo base_url("Shop/kategori_menu?id=KM002 ")?>">Sapi</a>
 							</li>
 							<li>
-								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM005 ")?>">Pelengkap</a>
+								<a href="<?php echo base_url("Shop/kategori_menu?id=KM005 ")?>">Pelengkap</a>
 							</li>
 							<li>
-								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM004 ")?>">Sayuran</a>
+								<a href="<?php echo base_url("Shop/kategori_menu?id=KM004 ")?>">Sayuran</a>
 							</li>
 							<li>
-								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM007 ")?>">Minuman Dingin</a>
+								<a href="<?php echo base_url("Shop/kategori_menu?id=KM007 ")?>">Minuman Dingin</a>
 							</li>
 							<li>
-								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM009 ")?>">Minuman Panas</a>
+								<a href="<?php echo base_url("Shop/kategori_menu?id=KM009 ")?>">Minuman Panas</a>
 							</li>
 							<li>
-								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM006 ")?>">Minuman Botol</a>
+								<a href="<?php echo base_url("Shop/kategori_menu?id=KM006 ")?>">Minuman Botol</a>
 							</li>
 							<li>
-								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM008 ")?>">Juice</a>
+								<a href="<?php echo base_url("Shop/kategori_menu?id=KM008 ")?>">Juice</a>
 							</li>
 					</ul>
 				</div>
 			</div>
+			</div>
+			
 			<div class="col-lg-12">
 				<br>
 				<br>
-				<br>
-				<br>
+				
 				<div class="row">
 					<?php foreach ($menu as $row) {	
 			?>
@@ -102,16 +86,13 @@
 									<?php } ?>
 								</div>
 							</div>
-							<div class="detail">
+							<div class="detail" style="background:#F5F7FA">
 								<br>
 								<img src="<?php echo base_url();?><?php echo $row['Gambar'];?>" alt="dsadas" />
 								<br>
 								<br>
 								<button href="#" class="btn btn-info">Pesan</button>
 								<button type="button" class="btn btn-info">Detail</button>
-
-								<button type="button" class="btn btn-info" data-toggle="modal" data-target="#produkdetail">Detail</button>
-								
 							</div>
 						</div>
 					</div>
