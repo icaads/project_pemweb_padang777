@@ -29,14 +29,12 @@
                             <button type="submit" class="btn btn-primary btn-block">Sign in</button>
                           </div>
                         </form>
-                          <div class="form-group">
-                          <a href="<?php echo base_url()?>Regist/AddUser">
-                            <button type="submit" class="btn btn-info btn-block">Register</button>
-                          </a>
-                        </div>
-                        <div class="form-group">
+                         
+                          
+                       
+                          <a href="<?php echo base_url()?>Login/login_bar">
                            <button type="submit" class="btn btn-secondary btn-block">Masuk Sebagai Tamu</button>
-                          </div>
+                          </a>
                       </div>
                     </div>
                   </div>
@@ -58,6 +56,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url()?>contactform/index">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url()?>Regist/AddUser">Register</a>
           </li>
       </ul>
     </div>

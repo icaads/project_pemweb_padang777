@@ -38,6 +38,9 @@
 					
 					<button type="submit" class="btn btn-dark btn-block" data-toggle="modal" data-target="#modal_guest">Sebagai Tamu</button>
 					<br>
+					
+					
+					<br>
 					<br>
 					<div id="modal_guest" class="modal fade" role="dialog">
 						<div class="modal-dialog">
