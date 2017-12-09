@@ -1,5 +1,7 @@
 <div class="container">
-<img src="<?php echo base_url();?>/assets/picture/line copy.jpg">
+<h2 class="text-center">Menu Populer</h2>
+<hr>
+<!-- <img src="<?php//echo base_url();?>/assets/picture/line copy.jpg"> -->
     <div id="carousel_example" class="carousel slide hidden-xs" data-ride="carousel" data-type="multi">
         <div class="carousel-inner">
             <div class="item active">

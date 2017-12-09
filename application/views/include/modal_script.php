@@ -1,12 +1,13 @@
 <script type="text/javascript">
-	$(document).ready(function () {
-		$('#modal_guest').modal({
-			keyboard: false,
-			show: 'fade',
-			backdrop: 'static',
-		});
-	});
-</script>
+			
+			$(document).ready(function(){
+				$('#modal_guest').modal({
+					keyboard: false,
+					show: 'fade',
+					backdrop: 'static',
+				});
+			});
+		</script>
 
 <script type="text/javascript">
 	$(window).on('load', function () {

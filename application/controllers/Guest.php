@@ -42,7 +42,7 @@ class Guest extends CI_Controller{
 		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
 		$data['modal_script'] = $this->load->view('include/modal_script.php',NULL,TRUE);
 		$data['menu'] = $this->menu->show_menu();
-		$this->load->view('pages/shop_guest.php',$data);
+		$this->load->view('pages/shop.php',$data);
     }
 
     public function reservasi(){

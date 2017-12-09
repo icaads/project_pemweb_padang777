@@ -1,7 +1,7 @@
 <div class="container">
+<h2 class="text-center">Artikel</h2>   <hr> 
 <div id="blog" class="row"> 
-<img src="<?php echo base_url();?>/assets/picture/line2.jpg">      
-                
+            
              <div class="col-md-10 blogShort">
                 <h2>Cerita di Balik Porsi Nasi Padang</h2>
                <!-- <img src="http://www.kaczmarek-photo.com/wp-content/uploads/2012/06/DSC_4073-150x150.jpg" alt="post img" class="pull-left img-responsive thumb margin10 img-thumbnail">-->

@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Error 404</title>
 </head>
 <body>
+    <?php echo $js; echo $css; echo $navigation; ?>
     <div class="container">
+    <br><br><br>
         <h2>Halaman yang Anda cari tidak tersedia</h2>
-        <?php
-            echo base_url()./assets/picture/notfound.gif;
-        ?>
+        <img src="assets/picture/notfound.gif" alt="">
     </div>
+    <?php echo $footer; ?>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<div class="bg-normal" style="color:#EC87C0">
+<div class="bg-normal">
 <?php echo $navigation; echo $js; echo $css;?>
 <br>
 <br>
@@ -31,12 +31,12 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<button type="submit" class="btn btn-primary btn-block">Sign in</button>
+							<button type="submit" class="btn btn-dark btn-block">Sign in</button>
 						</div>
 
 					</form>
 					
-					<button type="submit" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modal_guest">Sebagai Tamu</button>
+					<button type="submit" class="btn btn-dark btn-block" data-toggle="modal" data-target="#modal_guest">Sebagai Tamu</button>
 					<br>
 					<br>
 					<div id="modal_guest" class="modal fade" role="dialog">
