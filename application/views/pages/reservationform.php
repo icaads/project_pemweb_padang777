@@ -25,6 +25,7 @@
 			<br>
 
 			<h2 class="text-center">Formulir Pemesanan Meja</h2>
+			<hr>
 			<br>
 			<br>
 			<div class=row>
@@ -55,13 +56,13 @@
 							<div class="col-sm-12">
 								<div class="input-group">
 									<span class="input-group-btn">
-										<button type="button" class="quantity-left-minus btn btn-info btn-number" data-type="minus" data-field="">
+										<button type="button" class="quantity-left-minus btn btn-primary btn-number" data-type="minus" data-field="">
 											<span class="fa fa-minus"></span>
 										</button>
 									</span>
 									<input type="text" id="quantity" name="quantity" class="form-control input-number text-center" value="1" min="1" max="100">
 									<span class="input-group-btn">
-										<button type="button" class="quantity-right-plus btn btn-info btn-number" data-type="plus" data-field="">
+										<button type="button" class="quantity-right-plus btn btn-primary btn-number" data-type="plus" data-field="">
 											<span class="fa fa-plus"></span>
 										</button>
 									</span>
@@ -98,6 +99,7 @@
 				<div>
 					<h2 class="text-center">Denah Lokasi Meja</h2>
 					<?php
+					//var_dump(base_url().$Cabang[0]['LinkDenah']);
 						if($Cabang != NULL){ ?>
 						<img id="gambar" src=" <?php echo base_url('');?><?php echo $Cabang[0]['LinkDenah']?>" style="width:500px;height:400px;">
 						<?php }
