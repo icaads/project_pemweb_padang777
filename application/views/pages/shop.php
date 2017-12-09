@@ -108,77 +108,7 @@
 								<br>
 								<br>
 								<button href="#" class="btn btn-info">Pesan</button>
-								<button type="button" class="btn btn-info" data-toggle="modal" data-target="#produkdetail">Detail</button>
-								<div class="modal fade product_view" id="produkdetail" role="dialog">
-									<div class="modal-dialog">
-										<div class="modal-content">
-											<div class="modal-header">
-												<a href="#" data-dismiss="modal" class="class pull-right">
-													<span class="fa fa-remove"></span>
-												</a>
-												<h3 class="modal-title">
-													<?php echo $row['NamaMenu']; ?>
-												</h3>
-											</div>
-											<div class="modal-body">
-												<div class="row">
-													<div class="col-md-6 product_img">
-														<img src="<?php echo base_url();?><?php echo $row['Gambar'];?>" class="img-responsive">
-													</div>
-													<div class="col-md-6 product_content">
-														<h4>Kategori Id:
-															<span>
-																<?php echo $row['IDKategoriMenu']; ?>
-															</span>
-														</h4>
-														<p>
-															<?php echo $row['Deskripsi'];?>
-														</p>
-														<h3 class="cost">
-															<?php echo 'Rp. '.$harga.',00';?>
-
-														</h3>
-														<div class="space-ten"></div>
-
-													<div class="container">
-
-														<div class="row">
-															<div class="col-xs-3 col-xs-offset-3">
-																<div class="input-group number-spinner">
-																	<span class="input-group-btn data-dwn">
-																		<button class="btn btn-default btn-info" data-dir="dwn">
-																			<span class="fa fa-minus"></span>
-																		</button>
-																	</span>
-																	<input type="text" class="form-control text-center" value="1" min="-10" max="40">
-																	<span class="input-group-btn data-up">
-																		<button class="btn btn-default btn-info" data-dir="up">
-																			<span class="fa fa-plus"></span>
-																		</button>
-																	</span>
-																</div>
-															</div>
-														</div>
-
-													</div>
-													<br>
-													<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#keranjang">
-													<span class="fa fa-shopping-cart"> Taruh Keranjang</span>
-												</button>
-													</div>
-
-
-
-													
-												</div>
-											</div>
-											<div class="modal-footer">
-												<div class="space-ten"></div>
-											</div>
-											
-										</div>
-									</div>
-								</div>
+								<button type="button" class="btn btn-info">Detail</button>
 							</div>
 						</div>
 					</div>
