@@ -78,35 +78,51 @@ class Reservasi extends CI_Controller{
 		if ($tanggal < date('Y-m-d')){
 			$status = 0;
 		}
-		if ($this->session->userdata('status')=='guest' & $statusreservasi= 1){
+
+		
+		if ($this->session->userdata('status')=='guest' & $this->session->userdata('statusreservasi') == 0 & $this->session->userdata('reservasi') == 0 ){
 			$username= $this->session->userdata('nama').'guest';
-			$statusreservasi = 0;
+			$datareservasi = array (
+				'username' => $username,
+				'NoTlp' => $this->session->userdata('NoTlp')
+			);
+			$this->Reservasis->transaction($datareservasi);
 			$dsa = $this->Reservasis->idtransaksireservasi();
 			//var_dump($dsa);
-
-			$idtransaksireservasi = $dsa[0]['IDTransactionReserv'] + 1;
-			$this->Reservasis->transaction();
-			//var_dump($idtransaksireservasi);
-			$this->session->set_userdata('idtransreservasi',$idtransaksireservasi);
+			$datareservasi = array(
+				'reservasi' => 1,
+				'idtransreservasi' => $dsa[0]['IDTransactionReserv']
+			);
+			$this->session->set_userdata($datareservasi);
+			
 		}
-		if ($this->session->userdata('status')=='member' & $statusreservasi= 1){
+		else if ($this->session->userdata('status')=='member' & $this->session->userdata('statusreservasi')== 0 & $this->session->userdata('reservasi') == 0 ){
 			$username= $this->session->userdata('username');
 			$statusreservasi = 0;
 			$dsa = $this->Reservasis->idtransaksireservasi();
-			$idtransaksireservasi = $dsa[0]['IDTransactionReserv'] + 1;
-			$this->Reservasis->transaction();
-			$this->session->set_userdata('idtransreservasi',$idtransaksireservasi);
+			$datareservasi = array (
+				'username' => $username,
+				'NoTlp' => $this->session->userdata('NoTlp')
+			);
+			$this->Reservasis->transaction($datareservasi);
+			$idtransaksireservasi = $dsa[0]['IDTransactionReserv'];
+			//$this->session->set_userdata('statusreservasi') = 1;
+			$datareservasi = array(
+				'reservasi' => 1,
+				'idtransreservasi' => $dsa[0]['IDTransactionReserv']
+			);
+			$this->session->set_userdata($datareservasi);
 		}
 			$idlokasi = $this->session->userdata('lokasi');
 
 			$data = array(
-				'username' => $username,
+				
 				'jumlah_tamu' => $jumlah,
 				'tanggalreservasi' => $tanggal,
 				'IDMeja'=>$meja,
 				'IDCabang' => $idlokasi,
-				'IDTransactionReserv' => $idtransaksireservasi,
-				'NoTlp' => $this->session->userdata('NoTlp')
+				'IDTransactionReserv' => $this->session->userdata('idtransreservasi')
+				
 			);
 		if($status == 0){		
 			$this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Terjadi Kesalahan saat mengisi form!</div>');

@@ -22,7 +22,8 @@ class Login extends CI_Controller{
                 'username' => $username,
                 'namadepan' => $profile['NamaDepan'], 
                 'status' => "member",
-                'NoTlp' => $profile['NoTlp']
+                'NoTlp' => $profile['NoTlp'],
+                'statusreservasi' =>  0
             );
 
             

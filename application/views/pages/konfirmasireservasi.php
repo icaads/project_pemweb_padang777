@@ -25,9 +25,26 @@
             <div class="col-md-12">
                 <div class="panel panel-default panel-center">
                     <div class="panel-heading">
-                        <h2> ID Reservasi :
+                        <h3> ID Reservasi :
                             <?php echo $this->session->userdata('idtransreservasi'); ?>
-                        </h2>
+                        </h3><hr>
+                        <div class="in-line">
+                        <h4 style="display: inline">Detail Pemesan : <strong> 
+                            <?php
+                            if (strpos($reservasi[0]['username'], 'guest') !== false) {
+                                echo substr($reservasi[0]['username'],0,strlen($reservasi[0]['username'])-5).' (Guest)';
+                            }
+                            else {
+                                echo $reservasi[0]['username'].' (Member)';
+                            }
+                             ?>
+                        </strong>
+                        </h4>
+                        <h4 style="display: inline">  
+                            <?php echo $reservasi[0]['NoTlp'] ?></h4>
+                        </div>
+                        
+                        
                     </div>
                     <table class="table">
                         <thead>
@@ -44,6 +61,7 @@
                             <?php foreach($reservasi as $row){
                                 $id = $row['IDReservasi'];    
                             ?>
+                        </h3>
                             <tr>
                                 <td>
                                     <?php echo $i; ?>
