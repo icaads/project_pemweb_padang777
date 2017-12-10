@@ -16,13 +16,20 @@
 	        else {
                 echo $navigation_login; $modal_script;} 
         ?>
+        
             <br>
             <br>
             <div class="item-container">
                 <div class="row">
                     <?php foreach($menu as $row) {
-            $id = $row['IDMenu'];
+                    //$_POST['id'] =  $row['IDMenu'];
         ?>
+        <?php 
+        
+        
+        
+        echo form_open('Shop/BelanjaBanyak','',$hidden); 
+        $hidden = array('id' => $row['IDMenu']);?>
                     <div class="col-md-12">
                         <div class="product col-md-3 service-image-left">
                             <center>
@@ -55,7 +62,7 @@
                             <?php $harga = sprintf('%0.3f',$row['Harga']/1000); ?>
                             <?php echo 'Rp. '.$harga.',00';?>
                         </h4>
-                        <?php echo form_open(); ?>
+                        
                         <div class="form-group">
 							<label for="jumlah_tamu" class="col-md-7 control-label"><h4>Jumlah Tamu</h4></label>
 							<div class="col-md-4">
@@ -65,7 +72,7 @@
 											<span class="fa fa-minus"></span>
 										</button>
 									</span>
-									<input type="text" id="quantity" name="quantity" class="form-control input-number text-center" value="1" min="1" max="100">
+									<input type="text" id="quantity" name="qty" class="form-control input-number text-center" value="1" min="1" max="100">
 									<span class="input-group-btn">
 										<button type="button" class="quantity-right-plus btn btn-primary btn-number" data-type="plus" data-field="">
 											<span class="fa fa-plus"></span>
@@ -74,14 +81,12 @@
 								</div>
 							</div>
 						</div> 
-                        <?php echo form_close();?>         
-                        <hr>
                         <div class="btn-group cart">
-                        <a href=<?php echo base_url("Shop/belanja?id=$id")?>>
-                            <button type="button" class="btn btn-success">
+                        
+                            <button type="submit" class="btn btn-success">
                             <span class="fa fa-shopping-cart"></span> Pesan
                             </button>
-                            </a>
+                            
                         </div>
                         <div class="btn-group wishlist">
                         <a href=<?php echo base_url("Shop")?>>
@@ -90,6 +95,9 @@
                             </button>
                             </a>
                         </div>
+                        <?php echo form_close();?>         
+                        <hr>
+                        
                     </div>
                 </div>
             </div>

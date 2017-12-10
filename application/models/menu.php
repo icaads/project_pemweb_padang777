@@ -23,6 +23,20 @@
             return $query->row_array();
         }
 
+        public function transaction($data){
+            $this->db->insert('transaction',$data);
+         }
+
+         public function order($data){
+            $this->db->insert('shoppingcart',$data);
+        }
+
+         public function idtransaksi(){
+            $data = "SELECT IDTransaksi FROM transaction ORDER BY IDTransaksi DESC LIMIT 1";
+            $query = $this->db->query($data);
+            return $query->result_array();
+        }
+
         public function details($id){
             $this->db->trans_begin ();
                 $this->db->select('*');

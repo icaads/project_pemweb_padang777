@@ -18,7 +18,8 @@ class Guest extends CI_Controller{
             'NoTlp' => $nohp,
             'alamat' => $alamat,
             'status' => "guest",
-            'statusreservasi' => 0
+            'statusreservasi' => 0,
+            'statuspesan' => 0
         );
        // var_dump($guest_session['NoTlp']);
        

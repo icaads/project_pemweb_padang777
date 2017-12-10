@@ -8,7 +8,18 @@ echo $js; echo $css;
 
 <body>
     <div class="container">
-        <?php echo $navigation; ?>
+    <?php
+	
+	if($this->session->userdata('status')=='member'){
+		echo $navigation_login;
+	}
+	else if($this->session->userdata('status')=='guest'){
+		echo $navbar_guest;
+	}
+	else{
+		echo $navigation;
+	}
+?>
 
         <br>
         <div class="row">
@@ -32,7 +43,7 @@ echo $js; echo $css;
                                 <td class="col-sm-8 col-md-6">
                                     <div class="media">
                                         <a class="thumbnail pull-left" href="#">
-                                            <img style="width:100px; height:100px;" src="<?php echo base_url();?><?php echo $row['options'];?>" alt="dsadas" /> </a>
+                                            <img style="width:150px; height:150px;" src="<?php echo base_url();?><?php echo $row['options'];?>" alt="dsadas" /> </a>
                                         <div class="media-body">
                                             <h4 class="media-heading">
                                                 <br>

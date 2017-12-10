@@ -39,7 +39,7 @@
 				</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="cart/shopping_cart">
+				<a class="nav-link" href="<?php echo base_url('cart/shopping_cart');?>">
 					<span class="fa fa-shopping-cart"></span> 0
 			</li>
 			</a>

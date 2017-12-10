@@ -49,6 +49,28 @@ class Shop extends CI_Controller{
 	   redirect(base_url('shop'));
 	}
 
+	function BelanjaBanyak(){
+		$this->load->model('menu');
+		$this->load->library('cart');
+		$asd = $this->input->post('id');
+		var_dump($asd);
+		$product = $this->menu->cari($asd);
+		var_dump($product);
+	    $insert = array(
+		'id' => $asd,
+		'qty' => $this->input->post('qty'),
+		'price' => $product['Harga'],
+		'name' => $product['NamaMenu'],
+		'options' => $product['Gambar']
+	   );	
+	   var_dump($insert);
+	   $this->cart->insert($insert);	
+	  // var_dump($lala);
+	   //var_dump($this->cart->contents()); 
+	   redirect(base_url('shop'));
+	}
+
+
 	function remove() {
 		$rowid = $this->input->get('id');
 	   $this->cart->update(array(
@@ -59,7 +81,59 @@ class Shop extends CI_Controller{
 	}
 
 	function destroy_cart(){
-		var_dump($this->cart->contens());
+		$cart = $this->cart->contents();
+		$this->load->model('menu');
+		//var_dump($cart);
+		if ($this->session->userdata('status')=='guest' & $this->session->userdata('statuspesan') == 0 & $this->session->userdata('pesan') == 0 ){
+			$username= $this->session->userdata('nama').'guest';
+			$datapesan = array (
+				'username' => $username,
+				'TanggalTransaksi' => date('Y-m-d'),
+				'Status' => 0,
+				'JenisPembayaran' => 'transfer',
+				'IDCabang' => 'CB001'
+			);
+			$this->menu->transaction($datapesan);
+			$dsa = $this->menu->idtransaksi();
+			//var_dump($dsa);
+			$datapesanan = array(
+				'pesan' => 1,
+				'idtransaksi' => $dsa[0]['IDTransaksi']
+			);
+			$this->session->set_userdata($datapesanan);
+			
+		}
+		else if ($this->session->userdata('status')=='member' & $this->session->userdata('statuspesan')== 0 & $this->session->userdata('pesan') == 0 ){
+			$username= $this->session->userdata('username');
+			$datapesan = array (
+				'username' => $username,
+				'TanggalTransaksi' => date('Y-m-d'),
+				'Status' => 0,
+				'JenisPembayaran' => 'transfer',
+				'IDCabang' => 'CB001'
+			);
+			$this->menu->transaction($datapesan);
+			$dsa = $this->menu->idtransaksi();
+			//var_dump($dsa);
+			$datapesanan = array(
+				'pesan' => 1,
+				'idtransaksi' => $dsa[0]['IDTransaksi']
+			);
+			//var_dump($datapesanan);
+			$this->session->set_userdata($datapesanan);
+			
+		}
+		foreach ($cart as $row){
+			$data = array (
+				'IDMenu' => $row["id"],
+				'JumlahMenu' => $row['qty'],
+				'IDTransaksi' => $this->session->userdata('idtransaksi')
+			);
+			$this->menu->order($data);
+			//var_dump($data);
+		}
+		//for ($i=0;$i<count($cart);$i++){
+		//}
 		$this->cart->destroy();
 		redirect(base_url('home'));
 	}
