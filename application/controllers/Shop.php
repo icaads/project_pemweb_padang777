@@ -59,6 +59,7 @@ class Shop extends CI_Controller{
 	}
 
 	function destroy_cart(){
+		var_dump($this->cart->contens());
 		$this->cart->destroy();
 		redirect(base_url('home'));
 	}
