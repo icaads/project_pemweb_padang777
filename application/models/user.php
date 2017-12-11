@@ -4,8 +4,7 @@
 
 	class User extends CI_Model{
 		
-		public function __construct()
-		{
+		public function __construct(){
 			parent::__construct();
 			$this->load->database();
         }
@@ -54,9 +53,9 @@
                     'kodepos' => "$kodepos",
                     'tanggallahir' => "$tanggallahir"
 				);
-			//var_dump($data);
 			$this->db->insert('customer', $data);
         }
+
         public function profile($username){
 			$this->db->where('username', $username);
 			$query = $this->db->get('customer');
@@ -69,7 +68,5 @@
             $this->db->where('username',$this->session->userdata('username'));
             $this->db->insert('customer');
         }
-
 	}
-
 ?>

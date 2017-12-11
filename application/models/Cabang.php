@@ -2,10 +2,8 @@
 
 	defined('BASEPATH') OR exit('No direct script access allowed !');
 
-	class Cabang extends CI_Model{
-		
-		public function __construct()
-		{
+	class Cabang extends CI_Model{	
+		public function __construct(){
 			parent::__construct();
 			$this->load->database();
         }
@@ -20,7 +18,5 @@
             $query = $this->db->get('cabang');
             return $query->result_array();
         }
-
     }
-        
 ?>

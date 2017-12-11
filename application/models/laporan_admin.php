@@ -4,8 +4,7 @@
 
 	class laporan_admin extends CI_Model{
 		
-		public function __construct()
-		{
+		public function __construct(){
 			parent::__construct();
 			$this->load->database();
         }
@@ -30,7 +29,5 @@
 							  ->get();
 			return $query->result_array();
         }
-
 	}
-
 ?>

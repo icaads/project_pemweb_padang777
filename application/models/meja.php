@@ -3,9 +3,7 @@
 	defined('BASEPATH') OR exit('No direct script access allowed !');
 
 	class Meja extends CI_Model{
-		
-		public function __construct()
-		{
+		public function __construct(){
 			parent::__construct();
 			$this->load->database();
         }
@@ -15,7 +13,6 @@
             $query = $this->db->get('meja');
             return $query->result_array();
         }
-
-
     }
+?>
    

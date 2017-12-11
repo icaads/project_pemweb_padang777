@@ -4,8 +4,7 @@
 
 	class Reservasis extends CI_Model{
 		
-		public function __construct()
-		{
+		public function __construct(){
 			parent::__construct();
 			$this->load->database();
         }
@@ -15,7 +14,6 @@
         }
 
 		public function cek($data){
-
 			$this->db->where('tanggalreservasi',$data['tanggalreservasi']);
 			$this->db->where('IDMeja',$data['IDMeja']);
             $query = $this->db->get('reservasi');
@@ -38,7 +36,6 @@
             $this->db->delete('reservasi');
         }
 
-
         public function transaction($data){
            $this->db->insert('transactionreservasi',$data);
         }
@@ -46,14 +43,11 @@
         public function showdata($id){
                 $this->db->select('username,transactionreservasi.NoTlp,IDReservasi,NamaCabang,IDMeja,tanggalreservasi');
                 $this->db->from('reservasi');
-                //$query="select * from menu,kategorimenu where kategorimenu.IDKategoriMenu = menu.IDKategoriMenu"
                 $this->db->join('cabang', 'reservasi.IDCabang = cabang.IDCabang');
                 $this->db->join('transactionreservasi','transactionreservasi.IDTransactionReserv = reservasi.IDTransactionReserv');
                 $this->db->where('reservasi.IDTransactionReserv',$id);
                 $query = $this->db->get();
                 return $query->result_array();
-            
         }
-    }
-        
+    }    
 ?>
