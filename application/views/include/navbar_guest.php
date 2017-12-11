@@ -12,25 +12,25 @@
 	<div class="collapse navbar-collapse" id="navbarResponsive">
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item active">
-				<a class="nav-link" href="<?php base_url('home');?>">Home
+				<a class="nav-link" href="<?php base_url('home');?>">Beranda
 					<span class="sr-only">(current)</span>
 				</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="<?php echo base_url()?>about">About</a>
+				<a class="nav-link" href="<?php echo base_url()?>about">Tentang</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="<?php echo base_url()?>shop">Online Order</a>
+				<a class="nav-link" href="<?php echo base_url()?>shop">Pesan</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="<?php echo base_url('Reservasi/modal')?>">Reservation</a>
+				<a class="nav-link" href="<?php echo base_url('Reservasi/modal')?>">Reservasi</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="<?php echo base_url()?>contactform/index">Contact</a>
+				<a class="nav-link" href="<?php echo base_url()?>contactform/index">Kontal</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="<?php echo base_url('login/logout')?>">
-					<span class="fa fa-log-out"></span>Logout</a>
+					<span class="fa fa-log-out"></span>Keluar</a>
 			</li>
 			<li class="nav-item active">
 				<a class="nav-link">
@@ -40,7 +40,7 @@
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="<?php echo base_url('cart/shopping_cart');?>">
-					<span class="fa fa-shopping-cart"></span> 0
+					<span class="fa fa-shopping-cart"></span>
 			</li>
 			</a>
 		</ul>

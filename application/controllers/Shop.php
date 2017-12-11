@@ -188,6 +188,7 @@ class Shop extends CI_Controller{
 		$this->load->model('menu');
 		$asd = $this->input->get('id');
 		$data['menu']=$this->menu->details($asd);
+		$menu['menu'] = $this->menu->popular();
 		$data['js'] = $this->load->view('include/js.php',NULL,TRUE);
 		$data['css'] = $this->load->view('include/css.php',NULL,TRUE);
 		$data['navbar_guest'] = $this->load->view('include/navbar_guest.php',NULL,TRUE);
@@ -195,8 +196,10 @@ class Shop extends CI_Controller{
 		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
 		$data['button_script'] = $this->load->view('include/button_script.php',NULL,TRUE);
 		$data['modal_script'] = $this->load->view('include/modal_script.php',NULL,TRUE);
+		$data['popularitem'] = $this->load->view('include/popularitem.php',$menu,TRUE);
 		$this->load->view('pages/detail_menu.php',$data);
 
 	}
+
 }
 ?>

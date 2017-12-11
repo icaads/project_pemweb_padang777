@@ -47,18 +47,17 @@
 				<?php echo form_error('repassword', '<p class="text-danger">','</p>'); ?>
 			</div>
 		</div>
-		
+
 		<div class="form-group">
 			<div class="col-sm-9 col-sm-offset-3">
 				<button type="submit" class="btn btn-primary btn-block">Ganti Kata Sandi</button>
 			</div>
 		</div>
-        <?php echo $this->session->flashdata('msg'); ?>
+		<?php echo $this->session->flashdata('msg'); ?>
 		<?php echo form_close(); ?>
-       <!-- <a href><button type="submit" class="btn btn-primary btn-block">Ganti Kata Sandi</button></a>  -->
 	</div>
 	<?php echo $footer; ?>
-    <?php  echo $js; echo $navigation_login?>
+	<?php  echo $js; echo $navigation_login?>
 </body>
 
 </html>

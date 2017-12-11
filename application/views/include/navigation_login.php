@@ -12,28 +12,28 @@
   <div class="collapse navbar-collapse" id="navbarResponsive">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="<?php base_url('home');?>">Home
+        <a class="nav-link" href="<?php base_url('home');?>">Beranda
           <span class="sr-only">(current)</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url()?>about">About</a>
+        <a class="nav-link" href="<?php echo base_url()?>about">Tentang</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url()?>shop">Online Order</a>
+        <a class="nav-link" href="<?php echo base_url()?>shop">Pesan</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url()?>reservasi/modal">Reservation</a>
+        <a class="nav-link" href="<?php echo base_url()?>reservasi/modal">Reservasi</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url()?>profile">Member</a>
+        <a class="nav-link" href="<?php echo base_url()?>profile">Profil</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url()?>contactform/index">Contact</a>
+        <a class="nav-link" href="<?php echo base_url()?>contactform/index">Kontak</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url('login/logout')?>">
-          <span class="glyphicon glyphicon-log-out"></span>Logout</a>
+          <span class="glyphicon glyphicon-log-out"></span>Keluar</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link">
@@ -43,7 +43,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?php base_url('cart/shopping_cart');?>">
-          <span class="fa fa-shopping-cart"></span> 0
+          <span class="fa fa-shopping-cart"></span>
       </li>
     </ul>
   </div>

@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="<?php echo base_url('Admin/admin_database');?>"> Home <span class="sr-only"> (current) </span></a>
+            <a class="nav-link" href="<?php echo base_url('Admin/admin_database');?>"> Beranda <span class="sr-only"> (current) </span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('Admin/menu2') ?>"> Menu </a>

@@ -1,10 +1,11 @@
 <html>
 
 <head>
-	<?php 
+<?php 
 	echo $css;
 	echo $js;
 ?>
+<title>Produk</title>
 </head>
 
 <body>
@@ -29,33 +30,32 @@
 								<a href="<?php echo base_url(" Shop ")?>">Semua Kategori</a>
 							</li>
 							<li>
-								<li>
-									<a href="<?php echo base_url(" Shop/kategori_menu?id=KM001 ")?>">Ayam</a>
-								</li>
-								<li>
-									<a href="<?php echo base_url(" Shop/kategori_menu?id=KM003 ")?>">Ikan</a>
-								</li>
-								<li>
-									<a href="<?php echo base_url(" Shop/kategori_menu?id=KM002 ")?>">Sapi</a>
-								</li>
-								<li>
-									<a href="<?php echo base_url(" Shop/kategori_menu?id=KM005 ")?>">Pelengkap</a>
-								</li>
-								<li>
-									<a href="<?php echo base_url(" Shop/kategori_menu?id=KM004 ")?>">Sayuran</a>
-								</li>
-								<li>
-									<a href="<?php echo base_url(" Shop/kategori_menu?id=KM007 ")?>">Minuman Dingin</a>
-								</li>
-								<li>
-									<a href="<?php echo base_url(" Shop/kategori_menu?id=KM009 ")?>">Minuman Panas</a>
-								</li>
-								<li>
-									<a href="<?php echo base_url(" Shop/kategori_menu?id=KM006 ")?>">Minuman Botol</a>
-								</li>
-								<li>
-									<a href="<?php echo base_url(" Shop/kategori_menu?id=KM008 ")?>">Juice</a>
-								</li>
+								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM001 ")?>">Ayam</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM003 ")?>">Ikan</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM002 ")?>">Sapi</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM005 ")?>">Pelengkap</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM004 ")?>">Sayuran</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM007 ")?>">Minuman Dingin</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM009 ")?>">Minuman Panas</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM006 ")?>">Minuman Botol</a>
+							</li>
+							<li>
+								<a href="<?php echo base_url(" Shop/kategori_menu?id=KM008 ")?>">Juice</a>
+							</li>
 						</ul>
 					</div>
 				</div>

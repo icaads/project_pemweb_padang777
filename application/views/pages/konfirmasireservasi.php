@@ -77,7 +77,7 @@
                                 <td>
                                     <div style="text-align:center">
                                         <a href="<?php echo base_url(" reservasi/hapus_reservasi?id=$id ")?>">
-                                            <button class="btn btn-danger">Remove</button>
+                                            <button class="btn btn-danger">Hapus</button>
                                         </a>
                                 </td>
                                 </div>

@@ -4,6 +4,7 @@
     <?php
 echo $js; echo $css; 
 ?>
+        <title>Keranjang Belanja</title>
 </head>
 
 <body>
@@ -32,16 +33,16 @@ echo $js; echo $css;
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Product</th>
-                                <th>Quantity</th>
-                                <th class="text-center">Price</th>
+                                <th>Produk</th>
+                                <th>Jumlah</th>
+                                <th class="text-center">Harga</th>
                                 <th class="text-center">Total</th>
                                 <th> </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <div class="my-list">
+                                <div>
                                     <td class="col-sm-8 col-md-6">
                                         <div class="media">
                                             <a class="thumbnail pull-left" href="#">
@@ -75,7 +76,7 @@ echo $js; echo $css;
                                     <td class="col-sm-1 col-md-1">
                                         <?php $row_id = $row['rowid']; ?>
                                         <a href=<?php echo base_url( "Shop/remove?id=$row_id")?>>
-                                            <button class="btn btn-danger">Remove</button>
+                                            <button class="btn btn-danger">Hapus</button>
                                         </a>
                                     </td>
                                 </div>
@@ -108,7 +109,9 @@ echo $js; echo $css;
                                 </td>
                                 <td class="text-right">
                                     <h5>
-                                        <strong><?php echo $this->session->userdata('ongkir'); ?></strong>
+                                        <strong>
+                                            <?php echo 'Rp '.$this->session->userdata('ongkir').',00'; ?>
+                                        </strong>
                                     </h5>
                                 </td>
                             </tr>
@@ -136,14 +139,14 @@ echo $js; echo $css;
                                 <td>
                                     <a href=<?php echo base_url( "Shop")?>>
                                         <button type="button" class="btn btn-default">
-                                            <span class="fa fa-shopping-cart"></span> Continue Shopping
+                                            <span class="fa fa-shopping-cart"></span> Lanjut Belanja
                                         </button>
                                 </td>
                                 </a>
                                 <td>
                                     <a href=<?php echo base_url( "Shop/destroy_cart")?>>
                                         <button type="button" class="btn btn-success">
-                                            Checkout
+                                            Bayar
                                             <span class="fa fa-play"></span>
                                         </button>
                                     </a>
@@ -166,16 +169,10 @@ echo $js; echo $css;
                                     </div>
 
                                 </div>
-
-
-
                                 <div class="col-sm-3">
                                     <button type="submit" class="btn btn-primary btn-block">Lanjutkan</button>
                                 </div>
                             </div>
-
-
-
                         </div>
                         <?php echo form_close(); ?>
                     </table>
@@ -277,9 +274,6 @@ echo $js; echo $css;
 
                     </div>
                     <?php } ?>
-
-                    <!-- </tbody> -->
-
                 </div>
             </div>
     </div>
