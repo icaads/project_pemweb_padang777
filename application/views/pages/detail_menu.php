@@ -27,9 +27,9 @@
         <?php 
         
         
-        
+        $hidden = array('id' => $row['IDMenu']);
         echo form_open('Shop/BelanjaBanyak','',$hidden); 
-        $hidden = array('id' => $row['IDMenu']);?>
+       ?>
                     <div class="col-md-12">
                         <div class="product col-md-3 service-image-left">
                             <center>

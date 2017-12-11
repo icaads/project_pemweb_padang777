@@ -4,8 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Cart extends CI_Controller{
     public function shopping_cart(){
+       // $this->load->model('menu');
         $this->load->model('shop_cart');
         $this->load->library('cart');
+        
+        //$data['pesan'] = $this->menu->showdata($this->session->userdata('NoTlp'));
         $data['js'] = $this->load->view('include/js.php',NULL,TRUE);
         $data['css'] = $this->load->view('include/css.php',NULL,TRUE);
         $data['navigation'] = $this->load->view('include/navigation.php',NULL,TRUE);

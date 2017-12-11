@@ -49,6 +49,30 @@ class Shop extends CI_Controller{
 	   redirect(base_url('shop'));
 	}
 
+	function BelanjaPopuler(){
+		$this->load->model('menu');
+		$this->load->library('cart');
+		$asd = $this->input->get('id');
+		if ($this->session->userdata('status') != 'guest' | $this->session->userdata('status') != 'guest'){
+			redirect (base_url('login/login_bar'));
+		}
+		
+		$product = $this->menu->cari($asd);
+		//var_dump($product);
+	    $insert = array(
+		'id' => $asd,
+		'qty' => 1,
+		'price' => $product['Harga'],
+		'name' => $product['NamaMenu'],
+		'options' => $product['Gambar']
+	   );	
+	   //var_dump($insert);
+	   $this->cart->insert($insert);	
+	  // var_dump($lala);
+	   //var_dump($this->cart->contents()); 
+	   redirect(base_url('shop'));
+	}
+
 	function BelanjaBanyak(){
 		$this->load->model('menu');
 		$this->load->library('cart');
@@ -87,7 +111,7 @@ class Shop extends CI_Controller{
 		if ($this->session->userdata('status')=='guest' & $this->session->userdata('statuspesan') == 0 & $this->session->userdata('pesan') == 0 ){
 			$username= $this->session->userdata('nama').'guest';
 			$datapesan = array (
-				'username' => $username,
+				'username' => 'guest',
 				'TanggalTransaksi' => date('Y-m-d'),
 				'Status' => 0,
 				'JenisPembayaran' => 'transfer',

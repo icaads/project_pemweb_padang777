@@ -21,9 +21,11 @@ echo $js; echo $css;
 	}
 ?>
 
+
         <br>
         <div class="row">
             <?php if ($cart = $this->cart->contents()){  ?>
+               
             <?php foreach ($cart as $row) {	
                 ?>
             <div class="col-sm-12 col-md-10 col-md-offset-1">

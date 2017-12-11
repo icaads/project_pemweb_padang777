@@ -24,12 +24,14 @@ class Guest extends CI_Controller{
        // var_dump($guest_session['NoTlp']);
        
         $this->session->set_userdata($guest_session);
+        $this->load->model('menu');
+		$menu['menu'] = $this->menu->popular();
         $data['js'] = $this->load->view('include/js.php',NULL,TRUE);
 		$data['css'] = $this->load->view('include/css.php',NULL,TRUE);
 		$data['navbar_guest'] = $this->load->view('include/navbar_guest.php',NULL,TRUE);
 		$data['slider'] = $this->load->view('include/slider.php',NULL,TRUE);
 		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
-		$data['popularitem'] = $this->load->view('include/popularitem.php',NULL,TRUE);
+		$data['popularitem'] = $this->load->view('include/popularitem.php',$menu,TRUE);
         $data['artikel'] = $this->load->view('include/artikel.php',NULL,TRUE);
         //echo "<br><br>";
       //  var_dump($guest_session);

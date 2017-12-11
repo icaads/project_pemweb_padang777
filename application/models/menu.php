@@ -31,8 +31,10 @@
             $this->db->insert('shoppingcart',$data);
         }
 
+       
+
         public function popular(){
-            $this->db->select('NamaMenu','HargaMenu','IDMenu','Rating');
+            $this->db->select('NamaMenu,Harga,Rating,Gambar,menu.IDMenu');
             $this->db->select_sum('JumlahMenu');
             $this->db->from('shoppingcart');
             $this->db->join('menu','shoppingcart.IDMenu = menu.IDMenu');
