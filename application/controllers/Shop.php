@@ -104,6 +104,28 @@ class Shop extends CI_Controller{
 	   redirect(base_url('cart/shopping_cart'));
 	}
 
+	function promo(){
+		$this->load->model('promo');
+		$kodepromo = $this->input->post('promo');
+		//var_dump($kodepromo);
+		$kode = array(
+			'KodePromo' => $kodepromo
+		);
+		//var_dump($kode);
+		$diskon = $this->promo->kode("promo",$kode)->num_rows();
+		var_dump($diskon);
+		if ($diskon == 1){
+			$this->session->set_userdata('ongkir',4500);
+			//$this->session->set_userdata($data_session['ongkir'],4500);
+			echo $this->session->userdata('ongkir');
+			redirect(base_url('Cart/shopping_cart'));
+		}
+		else {
+			$this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Kode Voucher Tidak Tersedia !!</div>');
+			redirect(base_url('Cart/shopping_cart'));
+		}
+	}
+
 	function destroy_cart(){
 		$cart = $this->cart->contents();
 		$this->load->model('menu');

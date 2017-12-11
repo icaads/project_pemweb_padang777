@@ -18,7 +18,8 @@ class Guest extends CI_Controller{
             'alamat' => $alamat,
             'status' => "guest",
             'statusreservasi' => 0,
-            'statuspesan' => 0
+            'statuspesan' => 0,
+            'ongkir' => 15000
         );
        
         $this->session->set_userdata($guest_session);

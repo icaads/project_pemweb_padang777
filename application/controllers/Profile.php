@@ -41,11 +41,12 @@
 				$passwordlama = md5($this->input->post('passwordlama')) ;
 				$where = array(
 					'username' => $username,
-					'Password' => $passworlama
+					'Password' => $passwordlama
 				);
 				$cekpassword = $this->user->Login("customer",$where)->num_rows();
-				var_dump($passwordlama);
-				var_dump($cekpassword);
+				//var_dump($passwordlama);
+				//var_dump($cekpassword);
+				//var_dump ($username);
 				
 				if ($cekpassword == 1){
 					$this->user->gantipassword($this->input->post('password'));
