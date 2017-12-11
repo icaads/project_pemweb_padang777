@@ -14,9 +14,9 @@
 	        <h4 align='center'> Masuk sebagai: </h4>
 	      </div>
 	      <div class="modal-body">
-	        <a href="<?php echo base_url('index.php/Admin/admin_website'); ?>"><button type="submit" class="btn btn-warning" style="width:100%;"> Administrator Website </button>
+	        <a href="<?php echo base_url('Admin/admin_website'); ?>"><button type="submit" class="btn btn-warning" style="width:100%;"> Administrator Website </button>
 	        	<br><br>
-	        <a href="<?php echo base_url('index.php/Admin/admin_database'); ?>"><button type="submit" class="btn btn-warning" style="width:100%;"> Administrator Database </button>
+	        <a href="<?php echo base_url('Admin/admin_database'); ?>"><button type="submit" class="btn btn-warning" style="width:100%;"> Administrator Database </button>
 	      	<br><br>
 	      </div>
 	    </div>

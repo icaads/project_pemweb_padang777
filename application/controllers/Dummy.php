@@ -8,5 +8,5 @@ class Dummy extends CI_Controller{
 		$data['js'] = $this->load->view('include/js.php',NULL,TRUE);
 		$this->load->view('include/dummytopup.php',$data);
 	}
-
 }
+?>

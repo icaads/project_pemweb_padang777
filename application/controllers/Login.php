@@ -14,7 +14,7 @@ class Login extends CI_Controller{
             'username' => $username,
             'password' => md5($password)
         );
-        //var_dump($where);
+
         $cek = $this->user->Login("customer",$where)->num_rows();
         $profile = $this->user->profile($username);
         if($cek > 0){
@@ -27,9 +27,7 @@ class Login extends CI_Controller{
                 'statuspesan' => 0
             );
 
-            
             $this->session->set_userdata($data_session);
-
             redirect(base_url('home'));
         }
         else{
@@ -37,22 +35,16 @@ class Login extends CI_Controller{
         }
     }
 
-
-    public function failed()
-	{
+    public function failed(){
         $data['js'] = $this->load->view('include/js.php',NULL,TRUE);
-        //$data['captcha_script'] = $this->load->view('include/captcha_script.php',NULL,TRUE);
 		$data['css'] = $this->load->view('include/css.php',NULL,TRUE);
 		$data['navigation'] = $this->load->view('include/navigation.php',NULL,TRUE);
         $data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
         $this->load->view('pages/login_failed',$data);
     }
 
-    public function login_bar()
-	{
-        
+    public function login_bar(){ 
         $data['js'] = $this->load->view('include/js.php',NULL,TRUE);
-        //$data['captcha_script'] = $this->load->view('include/captcha_script.php',NULL,TRUE);
 		$data['css'] = $this->load->view('include/css.php',NULL,TRUE);
 		$data['navigation'] = $this->load->view('include/navigation.php',NULL,TRUE);
         $data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);

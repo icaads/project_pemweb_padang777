@@ -7,12 +7,11 @@ class Guest extends CI_Controller{
         $nama = $this->input->post('nama');
         $nohp = $this->input->post('nohp');
         $alamat = $this->input->post('alamat');
-       // echo "<br><br>";
         
         if ($nama == NULL | $nohp == NULL || $alamat == NULL){
             redirect(base_url('login/login_bar'));
         }
-        //var_dump($nohp);
+
 		$guest_session = array(
             'nama' => $nama,
             'NoTlp' => $nohp,
@@ -21,7 +20,6 @@ class Guest extends CI_Controller{
             'statusreservasi' => 0,
             'statuspesan' => 0
         );
-       // var_dump($guest_session['NoTlp']);
        
         $this->session->set_userdata($guest_session);
         $this->load->model('menu');
@@ -33,8 +31,7 @@ class Guest extends CI_Controller{
 		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
 		$data['popularitem'] = $this->load->view('include/popularitem.php',$menu,TRUE);
         $data['artikel'] = $this->load->view('include/artikel.php',NULL,TRUE);
-        //echo "<br><br>";
-      //  var_dump($guest_session);
+
 		$this->load->view('pages/home.php',$data);
     }
     
@@ -46,7 +43,6 @@ class Guest extends CI_Controller{
 		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
 		$data['modal_script'] = $this->load->view('include/modal_script.php',NULL,TRUE);
         $data['menu'] = $this->menu->kategori_data($this->input->post('id'));
-        //var_dump($data);
 		$this->load->view('pages/shop.php',$data);
     }
 
@@ -59,5 +55,4 @@ class Guest extends CI_Controller{
 		$this->load->view('pages/reservation_guest.php',$data);
     }
 }
-
 ?>

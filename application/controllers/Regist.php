@@ -3,14 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Regist extends CI_Controller {
 
-	public function __construct()
-	{
+	public function __construct(){
 		parent::__construct();
 		$this->load->model('user');
 	}
 
-	public function success()
-	{
+	public function success(){
         $data['js'] = $this->load->view('include/js.php',NULL,TRUE);
         //$data['captcha_script'] = $this->load->view('include/captcha_script.php',NULL,TRUE);
 		$data['css'] = $this->load->view('include/css.php',NULL,TRUE);
@@ -19,10 +17,7 @@ class Regist extends CI_Controller {
         $this->load->view('pages/login_bar',$data);
     }
     
-    
-
-	public function AddUser()
-	{
+	public function AddUser(){
         $tanggal = $this->input->post('tanggallahir');   
         $username = $this->input->post('username');
         $flag = $this->user->username_exists($username);
@@ -46,11 +41,9 @@ class Regist extends CI_Controller {
 		$data['css'] = $this->load->view('include/css.php',NULL,TRUE);
 		$data['navigation'] = $this->load->view('include/navigation.php',NULL,TRUE);
         $data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
-        //$this->load->view('pages/registform.php',$data)
 
         if (isset($_POST['g-recaptcha-response'])) $captcha=$_POST['g-recaptcha-response'];
 		if($this->form_validation->run() == FALSE){
-            //die('false');
             $this->load->view('pages/registform',$data);
 		}
 		else{
@@ -61,22 +54,20 @@ class Regist extends CI_Controller {
             $response = file_get_contents($str);
             $response_arr = (array) json_decode($response);
             if($response_arr["success"]==false)
-                //echo "Spammer";
                 $this->load->view('pages/registform',$data);
             else{
-                //echo "<h2> Berhasil </h2>";
                 $this->user->AddData(
-                    $this->input->post('username'),
-                    $this->input->post('email'),
-                    $this->input->post('namadepan'),
-                    $this->input->post('namabelakang'),
-                    $this->input->post('alamat'),
-                    $this->input->post('kota'),
-                    $this->input->post('notlp'),
-                    $this->input->post('password'),
-                    $this->input->post('repassword'),
-                    $this->input->post('kodepos'),
-                    $this->input->post('tanggallahir')
+                $this->input->post('username'),
+                $this->input->post('email'),
+                $this->input->post('namadepan'),
+                $this->input->post('namabelakang'),
+                $this->input->post('alamat'),
+                $this->input->post('kota'),
+                $this->input->post('notlp'),
+                $this->input->post('password'),
+                $this->input->post('repassword'),
+                $this->input->post('kodepos'),
+                $this->input->post('tanggallahir')
                 );
                 redirect(base_url('regist/success'));
             }	

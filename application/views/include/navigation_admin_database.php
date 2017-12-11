@@ -7,16 +7,16 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="<?php echo base_url('index.php/Admin/admin_database');?>"> Home <span class="sr-only"> (current) </span></a>
+            <a class="nav-link" href="<?php echo base_url('Admin/admin_database');?>"> Home <span class="sr-only"> (current) </span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('index.php/Admin/menu2') ?>"> Menu </a>
+            <a class="nav-link" href="<?php echo base_url('Admin/menu2') ?>"> Menu </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('index.php/Admin/kategori_menu') ?>">Kategori Menu</a>
+            <a class="nav-link" href="<?php echo base_url('Admin/kategori_menu') ?>">Kategori Menu</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('index.php/Admin/lappenj2') ?>">Lihat Laporan Keuangan</a>
+            <a class="nav-link" href="<?php echo base_url('Admin/lappenj2') ?>">Lihat Laporan Keuangan</a>
           </li>
       </ul>
     </div>

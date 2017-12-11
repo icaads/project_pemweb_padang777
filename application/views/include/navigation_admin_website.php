@@ -7,22 +7,22 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="<?php echo base_url('index.php/Admin/admin_website');?>"> Home <span class="sr-only"> current) </span></a>
+            <a class="nav-link" href="<?php echo base_url('Admin/admin_website');?>"> Home <span class="sr-only"> current) </span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('index.php/Admin/promo') ?>"> Promo </a>
+            <a class="nav-link" href="<?php echo base_url('Admin/promo') ?>"> Promo </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('index.php/Admin/menu1') ?>"> Menu </a>
+            <a class="nav-link" href="<?php echo base_url('Admin/menu1') ?>"> Menu </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('index.php/Admin/infocust') ?>"> Informasi Customer </a>
+            <a class="nav-link" href="<?php echo base_url('Admin/infocust') ?>"> Informasi Customer </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('index.php/Admin/lapreserv') ?>"> Lihat Laporan Reservasi </a>
+            <a class="nav-link" href="<?php echo base_url('Admin/lapreserv') ?>"> Lihat Laporan Reservasi </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('index.php/Admin/lappenj1') ?>"> Lihat Laporan Penjualan </a>
+            <a class="nav-link" href="<?php echo base_url('Admin/lappenj1') ?>"> Lihat Laporan Penjualan </a>
           </li>
       </ul>
     </div>
