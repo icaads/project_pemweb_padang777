@@ -24,7 +24,8 @@ class Login extends CI_Controller{
                 'status' => "member",
                 'NoTlp' => $profile['NoTlp'],
                 'statusreservasi' =>  0,
-                'statuspesan' => 0
+                'statuspesan' => 0,
+                'ongkir' => 15000
             );
 
             

@@ -14,7 +14,7 @@
 		<br><br><br>
 		<div class="container">
 			<div class="col-sm-6 pull-left" align="left">
-				<h1>Profil Pengguna</h1>
+				<h3>Profil Pengguna</h3>
 			</div>
 			<div class="col-sm-6 pull-right" align="right">
 				<a href="<?php echo base_url('Home/login');?>"><i id="back" class="fa fa-arrow-circle-left text-info">&nbsp;&nbsp;Kembali</i></a>
@@ -22,9 +22,9 @@
 			</div>
 			<br><br>
 			<div class="toppad">
-				<div class="panel panel-info">
+				<div class="panel panel-primary">
 					<div class="panel-heading">
-						<h3 class="panel-title"><?php echo $semua['NamaDepan'].' '.$semua['NamaBelakang']; ?></h3>
+						<h1 class="panel-title" style="font-size:25px "><?php echo $semua['NamaDepan'].' '.$semua['NamaBelakang']; ?></h1>
 					</div>
 					<div class="panel-body">
 						<div class="row">
@@ -53,9 +53,12 @@
 										</tr>
 									</tbody>
 								</table>
+								<div class="text-center">
 								<a href="<?php echo base_url('Profile/gantipassword'); ?>" class="btn btn-primary">Ganti Password</a>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<a href="#" class="btn btn-primary">Isi Padang Cash</a>
+								</div>
+								<br>
+								
 							</div>
 						</div>
 					</div>

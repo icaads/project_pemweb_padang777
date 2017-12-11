@@ -42,6 +42,7 @@ CREATE TABLE `customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `customer` (`username`, `Email`, `NamaDepan`, `NamaBelakang`, `Alamat`, `Kota`, `NoTlp`, `Password`, `RePassword`, `KodePos`, `Tanggallahir`) VALUES
+('',	NULL,	NULL,	NULL,	NULL,	'',	NULL,	'ichajelek21',	NULL,	NULL,	NULL),
 ('guest',	NULL,	NULL,	NULL,	NULL,	'',	NULL,	NULL,	NULL,	NULL,	NULL),
 ('ichajelek2',	'veronicadiansari@yahoo.com',	'Veronica',	'',	'jalan lalalala',	'Jakarta',	'0819238918239',	'5df83ecc0bf048e23560b1ca15aef018',	'5df83ecc0bf048e23560b1ca15aef018',	11830,	'2017-11-13');
 
@@ -188,7 +189,7 @@ CREATE TABLE `promo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `promo` (`IDPromo`, `KodePromo`, `DiskonHarga`, `TanggalBerlaku`) VALUES
-('P0001',	'DISC10K',	10000,	'2017-12-02');
+('P0001',	'ONGKIR4500',	'11500',	'2018-02-28');
 
 DROP TABLE IF EXISTS `reservasi`;
 CREATE TABLE `reservasi` (
@@ -290,4 +291,4 @@ INSERT INTO `transactionreservasi` (`IDTransactionReserv`, `username`, `NoTlp`) 
 (20,	'Wiraguest',	'085921446405'),
 (21,	'Wiraguest',	'0812889672382');
 
--- 2017-12-11 07:42:22
+-- 2017-12-11 09:10:26
