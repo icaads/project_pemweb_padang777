@@ -54,12 +54,8 @@
 				}
 				else {
 					$this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Password salah !!</div>');
-					//redirect(base_url('profile/gantipassword'));
-					
 				}
 			}
-			
-			//$this->load->view('include/gantipassword.php', $data);
 		}
 
 		public function isipadangcash(){
@@ -67,7 +63,6 @@
 			$data['css'] = $this->load->view('include/css.php', NULL, TRUE);
 			$data['navigation'] = $this->load->view('include/navigation_login.php', NULL, TRUE);
 			$data['footer'] = $this->load->view('include/footer.php', NULL, TRUE);
-
 		}
 	}
 ?>

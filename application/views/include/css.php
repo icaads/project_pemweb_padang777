@@ -13,3 +13,4 @@
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('/assets/css/blog-post.css'); ?> ">
 
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('/assets/css/datatables.min.css'); ?>">

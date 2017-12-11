@@ -6,11 +6,9 @@ class Reservasi extends CI_Controller{
 
 	public function __construct(){
 		parent::__construct();
-		
 		$this->load->model('Cabang');
 		$this->load->model('Meja'); 
 		$this->load->model('Reservasis');
-		
 	}
 
 	public function index(){
@@ -27,10 +25,7 @@ class Reservasi extends CI_Controller{
 		$data['modal_picture'] = $this->load->view('include/modal_picture.php',NULL,TRUE);
 		$data['modalcss'] = $this->load->view('include/modalcss.php',NULL,TRUE);
 		$this->load->view('pages/reservationform.php',$data);
-
-		
 	}
-
 
 	function modal(){
 		$data['js'] = $this->load->view('include/js.php',NULL,TRUE);
@@ -55,7 +50,6 @@ class Reservasi extends CI_Controller{
 		$data['footer'] = $this->load->view('include/footer.php',NULL,TRUE);
 		$this->load->view('pages/konfirmasireservasi.php',$data);
 	}
-
 	
 	function konfirmasi_akhir(){
 		$this->session->sess_destroy('idtransreservasi');
@@ -69,7 +63,6 @@ class Reservasi extends CI_Controller{
 	}
 
 	function pesan(){
-		
 		$tanggal = $this->input->post('waktu_datang');
 		$jumlah = $this->input->post('quantity');
 		$meja = $this->input->post('Meja');
@@ -79,7 +72,6 @@ class Reservasi extends CI_Controller{
 			$status = 0;
 		}
 
-		
 		if ($this->session->userdata('status')=='guest' & $this->session->userdata('statusreservasi') == 0 & $this->session->userdata('reservasi') == 0 ){
 			$username= $this->session->userdata('nama').'guest';
 			$datareservasi = array (
@@ -88,7 +80,6 @@ class Reservasi extends CI_Controller{
 			);
 			$this->Reservasis->transaction($datareservasi);
 			$dsa = $this->Reservasis->idtransaksireservasi();
-			//var_dump($dsa);
 			$datareservasi = array(
 				'reservasi' => 1,
 				'idtransreservasi' => $dsa[0]['IDTransactionReserv']
@@ -106,7 +97,6 @@ class Reservasi extends CI_Controller{
 			);
 			$this->Reservasis->transaction($datareservasi);
 			$idtransaksireservasi = $dsa[0]['IDTransactionReserv'];
-			//$this->session->set_userdata('statusreservasi') = 1;
 			$datareservasi = array(
 				'reservasi' => 1,
 				'idtransreservasi' => $dsa[0]['IDTransactionReserv']
@@ -114,15 +104,12 @@ class Reservasi extends CI_Controller{
 			$this->session->set_userdata($datareservasi);
 		}
 			$idlokasi = $this->session->userdata('lokasi');
-
 			$data = array(
-				
 				'jumlah_tamu' => $jumlah,
 				'tanggalreservasi' => $tanggal,
 				'IDMeja'=>$meja,
 				'IDCabang' => $idlokasi,
 				'IDTransactionReserv' => $this->session->userdata('idtransreservasi')
-				
 			);
 		if($status == 0){		
 			$this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Terjadi Kesalahan saat mengisi form!</div>');
@@ -130,7 +117,6 @@ class Reservasi extends CI_Controller{
 		}
 		else {
 			$cek = $this->Reservasis->cek($data);
-			//var_dump($cek);
 			if($cek == 1){
 				$this->session->set_flashdata('msg','<div class="alert alert-warning text-center">Meja sudah dipesan pada tanggal yang anda pilih!</div>');
 				redirect(base_url('reservasi/modal'));
@@ -139,9 +125,7 @@ class Reservasi extends CI_Controller{
 				$this->Reservasis->insert($data);
 				redirect(base_url('reservasi/konfirmasi_reservasi'));
 			}
-			
 		}
 	}
-
-
 }
+?>
