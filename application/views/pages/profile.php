@@ -53,7 +53,7 @@
 										</tr>
 									</tbody>
 								</table>
-								<a href="<?php echo base_url('Profile/gantipassword/'); ?>" class="btn btn-primary">Ganti Password</a>
+								<a href="<?php echo base_url('Profile/gantipassword'); ?>" class="btn btn-primary">Ganti Password</a>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								<a href="#" class="btn btn-primary">Isi Padang Cash</a>
 							</div>

@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('/assets/css/product_slider.css'); ?> ">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('/assets/css/font-awesome.min.css'); ?> ">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('/assets/css/shop.css'); ?> ">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('/assets/css/button.css'); ?> ">
+
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('/assets/css/bootflat.min.css'); ?> ">
 

@@ -25,6 +25,18 @@
             }
         }
         
+        public function cek($username,$password){
+            $this->db->where('username',$username);
+            $this->db->where('Password',$password);
+            $query = $this->db->get('customer');
+            if ($query->num_rows()>0)  {
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        }
+
 		public function AddData($username, $email, $namadepan, $namabelakang, $alamat, $kota, $notlp, $password, $repassword, $kodepos, $tanggallahir)
 		{
                 $password = md5($password);
@@ -52,11 +64,10 @@
 			return $row;
 		}
 
-        public function gantipassword($password_lama, $password_baru){
-            $data = array(
-                'password_lama' => "$password_lama",
-                'password_baru' => "$password_baru"
-            );
+        public function gantipassword($password){
+            $this->db->set('Password',$password);
+            $this->db->where('username',$this->session->userdata('username'));
+            $this->db->insert('customer');
         }
 
 	}

@@ -22,10 +22,43 @@
 		public function gantipassword(){
 			$data['js'] = $this->load->view('include/js.php', NULL, TRUE);
 			$data['css'] = $this->load->view('include/css.php', NULL, TRUE);
-			$data['navigation'] = $this->load->view('include/navigation_login.php', NULL, TRUE);
+			$data['navigation_login'] = $this->load->view('include/navigation_login.php', NULL, TRUE);
 			$data['footer'] = $this->load->view('include/footer.php', NULL, TRUE);
+			$this->load->view('include/gantipassword.php', $data);
+		}
+
+		public function gantipasswordexe(){
+			$this->load->library('form_validation');
+			$this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
+			$this->form_validation->set_rules('repassword', ' Re-type Password', 'required|matches[password]');
+
+			if($this->form_validation->run() == FALSE){
+
+				redirect(base_url('profile/gantipassword'));
+			}
+			else {
+				$username = $this->session->userdata('username');
+				$passwordlama = md5($this->input->post('passwordlama')) ;
+				$where = array(
+					'username' => $username,
+					'Password' => $passworlama
+				);
+				$cekpassword = $this->user->Login("customer",$where)->num_rows();
+				var_dump($passwordlama);
+				var_dump($cekpassword);
+				
+				if ($cekpassword == 1){
+					$this->user->gantipassword($this->input->post('password'));
+					$this->session->set_flashdata('msg','<div class="alert alert-success text-center">Ganti Password Berhasil !!</div>');
+				}
+				else {
+					$this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Password salah !!</div>');
+					//redirect(base_url('profile/gantipassword'));
+					
+				}
+			}
 			
-			$this->load->view('pages/gantipassword.php', $data);
+			//$this->load->view('include/gantipassword.php', $data);
 		}
 
 		public function isipadangcash(){

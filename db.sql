@@ -36,33 +36,14 @@ CREATE TABLE `customer` (
   `RePassword` varchar(33) DEFAULT NULL,
   `KodePos` int(11) DEFAULT NULL,
   `Tanggallahir` date DEFAULT NULL,
-  PRIMARY KEY (`username`)
+  PRIMARY KEY (`username`),
+  UNIQUE KEY `Email` (`Email`),
+  UNIQUE KEY `NoTlp` (`NoTlp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `customer` (`username`, `Email`, `NamaDepan`, `NamaBelakang`, `Alamat`, `Kota`, `NoTlp`, `Password`, `RePassword`, `KodePos`, `Tanggallahir`) VALUES
-('icaaaads',	'veronicadiansari@yahoo.com',	'Veronica',	'',	'Jalan 20 Desember',	'Jakarta',	'0819238918239',	'5df83ecc0bf048e',	'5df83ecc0bf048e',	11830,	'2017-10-19'),
-('icaaaadss',	'veronicadiansari@yahoo.com',	'Veronica',	'',	'Jalan 20 Desember',	'Jakarta',	'0819238918239',	'5df83ecc0bf048e',	'5df83ecc0bf048e',	11830,	'2017-10-19'),
-('ichajelek',	'veronica.sari@student.umn.ac.i',	'Veronica',	'',	'jalan lalalala',	'Jakarta',	'01239182391',	'5df83ecc0bf048e',	'5df83ecc0bf048e',	11830,	'2017-11-14'),
-('ichajelek2',	'veronicadiansari@yahoo.com',	'Veronica',	'',	'jalan lalalala',	'Jakarta',	'0819238918239',	'5df83ecc0bf048e23560b1ca15aef018',	'5df83ecc0bf048e23560b1ca15aef018',	11830,	'2017-11-13'),
-('ichajelek3',	'veronica.sari@student.umn.ac.i',	'Veronica',	'',	'jalan lalalala',	'Jakarta',	'01239182391',	'9191fab16d8316dfdb58e6d9dcc38774',	'9191fab16d8316dfdb58e6d9dcc38774',	11830,	'2017-11-08'),
-('ichajelek4',	'veronicadiansari@yahoo.com',	'Veronica',	'',	'Jalan 20 Desember',	'Jakarta',	'0819238918239',	'9191fab16d8316dfdb58e6d9dcc38774',	'9191fab16d8316dfdb58e6d9dcc38774',	11830,	'2017-11-08'),
-('ichajelek5',	'veronicadiansari@yahoo.com',	'Veronica',	'',	'Jalan 20 Desember',	'Jakarta',	'0819238918239',	'5df83ecc0bf048e23560b1ca15aef018',	'5df83ecc0bf048e23560b1ca15aef018',	11830,	'2017-11-08'),
-('lalalalala',	'veronica.sari@student.umn.ac.i',	'lalalal',	'mumumu',	'jalan lalalala',	'Jakarta',	'081202139129',	'icaads',	'icaads',	11830,	'2017-11-16'),
-('lalalalalalala',	'veronicadiansari@yahoo.com',	'',	'',	'',	'',	'',	'icaads',	'icaads',	0,	'0000-00-00'),
-('lalallalalala',	'veronicadiansari@yahoo.com',	'asdasdasdsa',	'',	'asdasdas',	'Jakarta',	'01239182391',	'icaads',	'icaads',	11830,	'0000-00-00'),
-('lalallalalalaaa',	'veronicadiansari@yahoo.com',	'asdasdasdsa',	'dsasdasad',	'asdasdas',	'Jakarta',	'01239182391',	'icaads',	'icaads',	11830,	'2017-11-16'),
-('veronicaaaads',	'veronicadiansari@yahoo.com',	'Veronica',	'',	'Jalan 20 Desember',	'Bogor',	'01239182391',	'5df83ecc0bf048e',	'5df83ecc0bf048e',	11830,	'2017-11-09'),
-('veronicads',	'veronicadiansari@yahoo.com',	'Veronica',	'Dian Sari',	'jalan lalalala',	'Jakarta',	'01239182391',	'ichajelek',	'ichajelek',	11830,	'2017-11-09');
-
-DROP TABLE IF EXISTS `dompetpadang`;
-CREATE TABLE `dompetpadang` (
-  `IDDompet` char(5) DEFAULT NULL,
-  `Saldo` int(11) DEFAULT NULL,
-  `IDCustomer` char(5) DEFAULT NULL,
-  KEY `IDCustomer` (`IDCustomer`),
-  CONSTRAINT `dompetpadang_ibfk_1` FOREIGN KEY (`IDCustomer`) REFERENCES `customer` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
+('guest',	NULL,	NULL,	NULL,	NULL,	'',	NULL,	NULL,	NULL,	NULL,	NULL),
+('ichajelek2',	'veronicadiansari@yahoo.com',	'Veronica',	'',	'jalan lalalala',	'Jakarta',	'0819238918239',	'5df83ecc0bf048e23560b1ca15aef018',	'5df83ecc0bf048e23560b1ca15aef018',	11830,	'2017-11-13');
 
 DROP TABLE IF EXISTS `kategorimenu`;
 CREATE TABLE `kategorimenu` (
@@ -212,77 +193,101 @@ INSERT INTO `promo` (`IDPromo`, `KodePromo`, `DiskonHarga`, `TanggalBerlaku`) VA
 DROP TABLE IF EXISTS `reservasi`;
 CREATE TABLE `reservasi` (
   `IDReservasi` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(20) DEFAULT NULL,
   `jumlah_tamu` int(11) DEFAULT NULL,
   `tanggalreservasi` date DEFAULT NULL,
-  `IDMeja` char(5) DEFAULT NULL,
+  `IDMeja` varchar(10) DEFAULT NULL,
   `IDCabang` char(5) DEFAULT NULL,
+  `IDTransactionReserv` int(11) DEFAULT NULL,
   PRIMARY KEY (`IDReservasi`),
-  KEY `IDCustomer` (`username`),
   KEY `IDMeja` (`IDMeja`),
   KEY `IDCabang` (`IDCabang`),
-  CONSTRAINT `reservasi_ibfk_1` FOREIGN KEY (`IDCabang`) REFERENCES `cabang` (`IDCabang`)
+  KEY `IDTransactionReserv` (`IDTransactionReserv`),
+  CONSTRAINT `reservasi_ibfk_1` FOREIGN KEY (`IDCabang`) REFERENCES `cabang` (`IDCabang`),
+  CONSTRAINT `reservasi_ibfk_2` FOREIGN KEY (`IDTransactionReserv`) REFERENCES `transactionreservasi` (`IDTransactionReserv`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `reservasi` (`IDReservasi`, `username`, `jumlah_tamu`, `tanggalreservasi`, `IDMeja`, `IDCabang`) VALUES
-(2,	'Veronicaguest',	1,	'2017-12-15',	'A3-CB',	'CB001'),
-(3,	'Veronicaguest',	1,	'2017-12-23',	'A3-CB',	'CB001'),
-(4,	'Veronicaguest',	1,	'2017-11-27',	'A4-CB',	'CB001'),
-(5,	'Veronicaguest',	1,	'2017-11-26',	'A3-CB',	'CB001'),
-(6,	'Veronicaguest',	1,	'2017-01-11',	'A3-CB',	'CB001'),
-(7,	'Veronicaguest',	1,	'2017-12-04',	'A4-CB',	'CB001'),
-(8,	'Veronicaguest',	1,	'2017-12-08',	'A2-CB',	'CB001'),
-(9,	'Veronicaguest',	1,	'2017-12-15',	'A2-CB',	'CB001'),
-(10,	'Veronicaguest',	1,	'2017-11-29',	NULL,	'CB001');
+INSERT INTO `reservasi` (`IDReservasi`, `jumlah_tamu`, `tanggalreservasi`, `IDMeja`, `IDCabang`, `IDTransactionReserv`) VALUES
+(46,	1,	'2017-12-30',	'A1-CB001',	'CB001',	18),
+(47,	1,	'2017-12-16',	'A1-CB001',	'CB001',	19),
+(48,	1,	'2017-12-23',	'A1-CB001',	'CB001',	20),
+(49,	1,	'2017-12-22',	'A1-CB001',	'CB001',	NULL),
+(50,	1,	'2017-12-29',	'A1-CB001',	'CB001',	NULL),
+(51,	1,	'2017-12-29',	'A3-CB001',	'CB001',	21);
 
 DROP TABLE IF EXISTS `shoppingcart`;
 CREATE TABLE `shoppingcart` (
   `IDCart` int(11) NOT NULL AUTO_INCREMENT,
-  `IDCustomer` char(5) DEFAULT NULL,
   `IDMenu` char(5) DEFAULT NULL,
   `JumlahMenu` int(11) DEFAULT NULL,
-  `Diskon` int(11) DEFAULT NULL,
-  `IDPromo` char(5) DEFAULT NULL,
+  `IDTransaksi` int(11) DEFAULT NULL,
   PRIMARY KEY (`IDCart`),
-  KEY `IDCustomer` (`IDCustomer`),
   KEY `IDMenu` (`IDMenu`),
-  KEY `IDPromo` (`IDPromo`),
-  CONSTRAINT `shoppingcart_ibfk_1` FOREIGN KEY (`IDCustomer`) REFERENCES `customer` (`username`),
-  CONSTRAINT `shoppingcart_ibfk_2` FOREIGN KEY (`IDMenu`) REFERENCES `menu` (`IDMenu`),
-  CONSTRAINT `shoppingcart_ibfk_3` FOREIGN KEY (`IDPromo`) REFERENCES `promo` (`IDPromo`)
+  KEY `IDTransaksi` (`IDTransaksi`),
+  CONSTRAINT `shoppingcart_ibfk_1` FOREIGN KEY (`IDTransaksi`) REFERENCES `transaction` (`IDTransaksi`),
+  CONSTRAINT `shoppingcart_ibfk_2` FOREIGN KEY (`IDMenu`) REFERENCES `menu` (`IDMenu`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO `shoppingcart` (`IDCart`, `IDMenu`, `JumlahMenu`, `IDTransaksi`) VALUES
+(1,	'MN004',	1,	NULL),
+(2,	'MN002',	1,	NULL),
+(3,	'MN004',	1,	NULL),
+(4,	'MN002',	1,	4),
+(5,	'MN004',	1,	4),
+(6,	'MN004',	2,	6),
+(7,	'MN012',	1,	6),
+(8,	'MN006',	1,	6);
 
 DROP TABLE IF EXISTS `transaction`;
 CREATE TABLE `transaction` (
-  `IDTransaksi` char(5) NOT NULL,
-  `IDCart` int(11) DEFAULT NULL,
+  `IDTransaksi` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) NOT NULL,
   `TanggalTransaksi` date DEFAULT NULL,
-  `JumlahTransaksi` int(11) DEFAULT NULL,
   `Status` tinyint(1) DEFAULT NULL,
   `JenisPembayaran` varchar(10) DEFAULT NULL,
-  `IDKurir` char(5) DEFAULT NULL,
   `IDCabang` char(5) DEFAULT NULL,
   PRIMARY KEY (`IDTransaksi`),
-  KEY `IDCart` (`IDCart`),
-  KEY `IDKurir` (`IDKurir`),
   KEY `IDCabang` (`IDCabang`),
-  CONSTRAINT `transaction_ibfk_2` FOREIGN KEY (`IDKurir`) REFERENCES `kurir` (`IDKurir`),
+  KEY `username` (`username`),
   CONSTRAINT `transaction_ibfk_3` FOREIGN KEY (`IDCabang`) REFERENCES `cabang` (`IDCabang`),
-  CONSTRAINT `transaction_ibfk_4` FOREIGN KEY (`IDCart`) REFERENCES `shoppingcart` (`IDCart`)
+  CONSTRAINT `transaction_ibfk_4` FOREIGN KEY (`username`) REFERENCES `customer` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO `transaction` (`IDTransaksi`, `username`, `TanggalTransaksi`, `Status`, `JenisPembayaran`, `IDCabang`) VALUES
+(1,	'ichajelek2',	'2017-12-11',	0,	'transfer',	'CB001'),
+(2,	'ichajelek2',	'2017-12-11',	0,	'transfer',	'CB001'),
+(3,	'ichajelek2',	'2017-12-11',	0,	'transfer',	'CB001'),
+(4,	'ichajelek2',	'2017-12-11',	0,	'transfer',	'CB001'),
+(6,	'guest',	'2017-12-11',	0,	'transfer',	'CB001');
 
 DROP TABLE IF EXISTS `transactionreservasi`;
 CREATE TABLE `transactionreservasi` (
-  `IDTransactionReserv` char(5) NOT NULL DEFAULT '',
-  `IDReservasi` char(5) DEFAULT NULL,
-  `TanggalReservasi` date DEFAULT NULL,
-  `Status` tinyint(1) DEFAULT NULL,
-  `JenisPembayaran` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`IDTransactionReserv`),
-  KEY `IDReservasi` (`IDReservasi`)
+  `IDTransactionReserv` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `NoTlp` varchar(20) NOT NULL,
+  PRIMARY KEY (`IDTransactionReserv`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO `transactionreservasi` (`IDTransactionReserv`, `username`, `NoTlp`) VALUES
+(1,	'',	''),
+(2,	'',	''),
+(3,	'',	''),
+(4,	'',	''),
+(5,	'',	''),
+(6,	'',	''),
+(7,	'',	''),
+(8,	'',	''),
+(9,	'',	''),
+(10,	'',	''),
+(11,	'',	''),
+(12,	'',	''),
+(13,	'Veronicaguest',	'085921446450'),
+(14,	'Veronicaguest',	'085921446450'),
+(15,	'Wiraguest',	'085921446405'),
+(16,	'Wiraguest',	'085921446405'),
+(17,	'Wiraguest',	'085921446405'),
+(18,	'Wiraguest',	'085921446405'),
+(19,	'Wiraguest',	'085921446405'),
+(20,	'Wiraguest',	'085921446405'),
+(21,	'Wiraguest',	'0812889672382');
 
--- 2017-12-09 04:15:01
+-- 2017-12-11 07:42:22

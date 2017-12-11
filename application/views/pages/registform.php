@@ -8,7 +8,7 @@
 <body>
 	<?php echo $navigation; echo $css; echo $js; echo $captcha_script;?>
 	<div class="container">
-		<?php echo form_open(); ?>
+		<?php echo form_open('Regist/AddUser'); ?>
 		<br>
 		<h2>Formulir Pendaftaran</h2>
 		<div class="form-group">
