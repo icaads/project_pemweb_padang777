@@ -16,29 +16,28 @@
 	        else {
                 echo $navigation_login; $modal_script;} 
         ?>
-        
             <br>
             <br>
+            <h3 styel="text-center">Detail Menu</h3>
             <div class="item-container">
+            <div class="wrapper-row">
                 <div class="row">
                     <?php foreach($menu as $row) {
                     //$_POST['id'] =  $row['IDMenu'];
-        ?>
-        <?php 
-        
-        
-        $hidden = array('id' => $row['IDMenu']);
-        echo form_open('Shop/BelanjaBanyak','',$hidden); 
-       ?>
+                    ?>
+                    <?php 
+                        $hidden = array('id' => $row['IDMenu']);
+                        echo form_open('Shop/BelanjaBanyak','',$hidden); 
+                    ?>
                     <div class="col-md-12">
-                        <div class="product col-md-3 service-image-left">
+                        <div class="product col-md-5 service-image-left">
                             <center>
                                 <img style="width:2500px; height:220px;" src="<?php echo base_url();?><?php echo $row['Gambar'];?>" alt="dsadas" />
                             </center>
                         </div>
                     </div>
                     &nbsp;
-                    <div class="col-md-7">
+                    <div class="col-md-7 col-md-offset-3">
                         <div class="product_title">
                             <h4>
                                 <?php echo $row['NamaMenu']; ?>
@@ -62,48 +61,96 @@
                             <?php $harga = sprintf('%0.3f',$row['Harga']/1000); ?>
                             <?php echo 'Rp. '.$harga.',00';?>
                         </h4>
-                        
+
                         <div class="form-group">
-							<label for="jumlah_tamu" class="col-md-7 control-label"><h4>Jumlah Tamu</h4></label>
-							<div class="col-md-4">
-								<div class="input-group">
-									<span class="input-group-btn">
-										<button type="button" class="quantity-left-minus btn btn-primary btn-number" data-type="minus" data-field="">
-											<span class="fa fa-minus"></span>
-										</button>
-									</span>
-									<input type="text" id="quantity" name="qty" class="form-control input-number text-center" value="1" min="1" max="100">
-									<span class="input-group-btn">
-										<button type="button" class="quantity-right-plus btn btn-primary btn-number" data-type="plus" data-field="">
-											<span class="fa fa-plus"></span>
-										</button>
-									</span>
-								</div>
-							</div>
-						</div> 
+                            <label for="jumlah_tamu" class="col-md-7 control-label">
+                                <h4>Qty</h4>
+                            </label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="quantity-left-minus btn btn-primary btn-number" data-type="minus" data-field="">
+                                            <span class="fa fa-minus"></span>
+                                        </button>
+                                    </span>
+                                    <input type="text" id="quantity" name="qty" class="form-control input-number text-center" value="1" min="1" max="100">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="quantity-right-plus btn btn-primary btn-number" data-type="plus" data-field="">
+                                            <span class="fa fa-plus"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="btn-group cart">
-                        
+
                             <button type="submit" class="btn btn-success">
-                            <span class="fa fa-shopping-cart"></span> Pesan
+                                <span class="fa fa-shopping-cart"></span> Pesan
                             </button>
-                            
                         </div>
                         <div class="btn-group wishlist">
-                        <a href=<?php echo base_url("Shop")?>>
-                            <button type="button" class="btn btn-danger">
-                                <span class="fa fa-arrow-left"></span> Kembali
-                            </button>
+                            <a href=<?php echo base_url( "Shop")?>>
+                                <button type="button" class="btn btn-danger">
+                                    <span class="fa fa-arrow-left"></span> Kembali
+                                </button>
                             </a>
                         </div>
-                        <?php echo form_close();?>         
+                        <?php echo form_close();?>
                         <hr>
-                        
                     </div>
                 </div>
+                </div>
+                <h2 class="text-center">Yang mungkin Anda sukai</h2>
+<hr>
+<!-- <img src="<?php//echo base_url();?>/assets/picture/line copy.jpg"> -->
+    <div id="carousel_example" class="carousel slide hidden-xs" data-ride="carousel" data-type="multi">
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="row">
+                <?php foreach ($menu as $row){ ?>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="slider-item">
+                            <div class="slider-image">
+                                <img src="<?php echo base_url()?><?php echo $row['Gambar']; ?> " class="img-responsive" alt="a" />
+                            </div>
+                            <div class="slider-main-detail">
+                                <div class="slider-detail">
+                                    <div class="product-detail">
+                                        <h5><?php echo $row['NamaMenu']; ?></h5>
+                                        <h5 class="detail-price"><?php
+                                         $harga = sprintf('%0.3f',$row['Harga']/1000);
+                                        echo 'Rp'.$harga.',00'; ?></h5>
+                                    </div>
+                                </div>
+                            <div class="cart-section">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-6 review">
+                                    <?php for ($i=0;$i<$row['Rating'];$i++){?>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    <?php } ?> 
+                                    <?php for ($i=0;$i<5-$row['Rating'];$i++){?>
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <?php } ?> 
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 col-xs-6">
+                                        <a href="<?php
+                                        $id = $row['IDMenu'];
+                                        echo base_url("Shop/belanjapopuler?id=$id")?>" class="AddCart btn btn-info"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Pesan</a>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
             </div>
             <?php } ?>
     </div>
-<br>
+    <br>
     <?php echo $footer; echo $button_script; ?>
 </body>
 
