@@ -31,6 +31,18 @@
             $this->db->insert('shoppingcart',$data);
         }
 
+        public function popular(){
+            $this->db->select('NamaMenu','HargaMenu','IDMenu','Rating');
+            $this->db->select_sum('JumlahMenu');
+            $this->db->from('shoppingcart');
+            $this->db->join('menu','shoppingcart.IDMenu = menu.IDMenu');
+            $this->db->group_by('shoppingcart.IDMenu');
+            $this->db->order_by('JumlahMenu');
+            $this->db->limit(10);
+            $query = $this->db->get();
+            return $query->result_array();
+        }
+
          public function idtransaksi(){
             $data = "SELECT IDTransaksi FROM transaction ORDER BY IDTransaksi DESC LIMIT 1";
             $query = $this->db->query($data);

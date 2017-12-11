@@ -6,6 +6,7 @@
         <div class="carousel-inner">
             <div class="item active">
                 <div class="row">
+                <?php foreach ($menu as $row){ ?>
                     <div class="col-md-3 col-sm-3 col-xs-12">
                         <div class="slider-item">
                             <div class="slider-image">
@@ -14,7 +15,7 @@
                             <div class="slider-main-detail">
                                 <div class="slider-detail">
                                     <div class="product-detail">
-                                        <h5>Product Name</h5>
+                                        <h5><?php echo $row['NamaMenu']; ?></h5>
                                         <h5 class="detail-price">$187.87</h5>
                                     </div>
                                 </div>
@@ -35,6 +36,7 @@
                             </div>
                         </div>
                     </div>
+                <?php } ?>
                 </div>
             </div>
         </div>
