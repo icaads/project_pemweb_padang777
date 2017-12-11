@@ -25,7 +25,8 @@
 	</div>
 	<br><br>
 	<?php echo $footer; ?>
-	<?php echo $js_crud; ?>
 	<?php echo $js; ?>
+	<?php echo $js_crud; ?>
+	
 </body>
 </html>
