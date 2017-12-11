@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title></title>
+    <title>Artikel</title>
 
 </head>
 

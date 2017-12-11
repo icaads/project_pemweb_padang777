@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title></title>
+	<title>Formulir Pendaftaran</title>
 </head>
 
 <body>

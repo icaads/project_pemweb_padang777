@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title> Administrator Database - Laporan Penjualan </title>
 	<?php echo $css; ?>
 </head>
+
 <body>
 	<?php echo $navigation_admin_database; ?>
 	<br>
 	<div class="container-fluid">
 		<div style="border-bottom: 3px solid rgb(218, 55, 72);">
-			<p style="text-align: center;"> 
+			<p style="text-align: center;">
 				<font size="7" style="color:rgb(218, 55, 72);"> Laporan Penjualan </font>
 				<br>
 				<font size="5" color="black"> Administrator Database </font>
@@ -68,10 +70,12 @@
 				</tfoot>
 			</table>
 		</div>
-		<br><br>
-	<?php } ?>
-	<?php echo $footer; ?>
-	<?php echo $js; ?>
-	<?php echo $js_datatable; ?>
+		<br>
+		<br>
+		<?php } ?>
+		<?php echo $footer; ?>
+		<?php echo $js; ?>
+		<?php echo $js_datatable; ?>
 </body>
+
 </html>

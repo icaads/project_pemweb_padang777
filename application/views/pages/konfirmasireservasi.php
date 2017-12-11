@@ -13,10 +13,8 @@
 				echo $navigation_login;
 			}
 			else {
-				echo $navbar_guest;
-				
-			}
-			
+				echo $navbar_guest;		
+			}	
 		?>
             <br>
             <br>
@@ -27,10 +25,12 @@
                     <div class="panel-heading">
                         <h3> ID Reservasi :
                             <?php echo $this->session->userdata('idtransreservasi'); ?>
-                        </h3><hr>
+                        </h3>
+                        <hr>
                         <div class="in-line">
-                        <h4 style="display: inline">Detail Pemesan : <strong> 
-                            <?php
+                            <h4 style="display: inline">Detail Pemesan :
+                                <strong>
+                                    <?php
                             if (strpos($reservasi[0]['username'], 'guest') !== false) {
                                 echo substr($reservasi[0]['username'],0,strlen($reservasi[0]['username'])-5).' (Guest)';
                             }
@@ -38,13 +38,12 @@
                                 echo $reservasi[0]['username'].' (Member)';
                             }
                              ?>
-                        </strong>
-                        </h4>
-                        <h4 style="display: inline">  
-                            <?php echo $reservasi[0]['NoTlp'] ?></h4>
+                                </strong>
+                            </h4>
+                            <h4 style="display: inline">
+                                <?php echo $reservasi[0]['NoTlp'] ?>
+                            </h4>
                         </div>
-                        
-                        
                     </div>
                     <table class="table">
                         <thead>
@@ -61,7 +60,7 @@
                             <?php foreach($reservasi as $row){
                                 $id = $row['IDReservasi'];    
                             ?>
-                        </h3>
+                            </h3>
                             <tr>
                                 <td>
                                     <?php echo $i; ?>
@@ -77,7 +76,7 @@
                                 </td>
                                 <td>
                                     <div style="text-align:center">
-                                        <a href="<?php echo base_url("reservasi/hapus_reservasi?id=$id")?>">
+                                        <a href="<?php echo base_url(" reservasi/hapus_reservasi?id=$id ")?>">
                                             <button class="btn btn-danger">Remove</button>
                                         </a>
                                 </td>
@@ -87,20 +86,15 @@
                         </tbody>
                     </table>
                 </div>
-
-
             </div>
             <a href="<?php echo base_url('reservasi/konfirmasi_akhir'); ?>">
-            <div style="text-align:center">
-                <button type="button" class="btn btn-info pull-center">Konfirmasi Reservasi</button>
-                <br>
-                <br>
-            </div>
+                <div style="text-align:center">
+                    <button type="button" class="btn btn-info pull-center">Konfirmasi Reservasi</button>
+                    <br>
+                    <br>
+                </div>
             </a>
-            
-
     </div>
-
     <?php echo $footer; ?>
 </body>
 

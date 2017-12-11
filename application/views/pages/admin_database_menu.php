@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title> Administrator Database - Menu </title>
 	<?php echo $css_crud; ?>
 	<?php echo $css; ?>
 </head>
+
 <body>
 	<?php echo $navigation_admin_database; ?>
 	<br>
 	<div class="container-fluid">
 		<div style="border-bottom: 3px solid rgb(218, 55, 72);">
-			<p style="text-align: center;"> 
+			<p style="text-align: center;">
 				<font size="7" style="color:rgb(218, 55, 72);"> Menu </font>
 				<br>
 				<font size="5" color="black"> Administrator Database </font>
@@ -23,9 +25,11 @@
 			</div>
 		</div>
 	</div>
-	<br><br>
+	<br>
+	<br>
 	<?php echo $footer; ?>
 	<?php echo $js; ?>
 	<?php echo $js_crud; ?>
 </body>
+
 </html>

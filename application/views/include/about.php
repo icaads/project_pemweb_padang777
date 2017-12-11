@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="my-4">About Us</h1>
+  <h1 class="my-4">Tentang Kami</h1>
       <p>Padang 777 merupakan suatu project yang dibuat untuk memudahkan para pecinta kuliner Nasi Padang dalam menemukan menu apa yang diinginkan serta memudahkan jika ingin melakukan pemesanan</p>
       <div class="row">
         <div class="col-lg-12">
